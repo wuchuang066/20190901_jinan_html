@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<!-- Vendor styles -->
+		<link rel="stylesheet" href="vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css">
+		<link rel="stylesheet" href="vendors/bower_components/animate.css/animate.min.css">
+
+		<!-- App styles -->
+		<link rel="stylesheet" href="css/app.min.css">
+		<!-- 漂亮弹框 开始 -->
+		<script src="js/sweetalert.min.js"></script>
+		<!-- 漂亮弹框 结束 -->
+	</head>
+
+	<body data-sa-theme="1">
+		<div class="login">
+
+			<!-- Login -->
+			<div class="login__block active" id="l-login">
+				<div class="login__block__header">
+					<i class="zmdi zmdi-account-circle"></i>
+					Hi there! Please Sign in
+
+					<div class="actions actions--inverse login__block__actions">
+						<div class="dropdown">
+							<i data-toggle="dropdown" class="zmdi zmdi-more-vert actions__item"></i>
+
+							<div class="dropdown-menu dropdown-menu-right">
+								<a class="dropdown-item" data-sa-action="login-switch" data-sa-target="#l-forget-password" href="">Forgot
+									password?</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="login__block__body">
+					<div class="form-group">
+						<input type="text" class="form-control text-center" placeholder="Username" id="login_admin_username">
+					</div>
+
+					<div class="form-group">
+						<input type="password" class="form-control text-center" placeholder="Password" id="login_admin_password">
+					</div>
+
+					<a href="#" class="btn btn--icon login__block__btn" id="login_href"><i class="zmdi zmdi-long-arrow-right"></i></a>
+				</div>
+			</div>
+
+			<!-- Forgot Password -->
+			<div class="login__block" id="l-forget-password">
+				<div class="login__block__header">
+					<i class="zmdi zmdi-account-circle"></i>
+					Forgot Password?
+
+					<div class="actions actions--inverse login__block__actions">
+						<div class="dropdown">
+							<i data-toggle="dropdown" class="zmdi zmdi-more-vert actions__item"></i>
+
+							<div class="dropdown-menu dropdown-menu-right">
+								<a class="dropdown-item" data-sa-action="login-switch" data-sa-target="#l-login" href="">Already have an
+									account?</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="login__block__body">
+					<p class="mb-5">Your Register Email...</p>
+
+					<div class="form-group">
+						<input type="text" class="form-control text-center" placeholder="Email Address">
+					</div>
+
+					<a href="index.html" class="btn btn--icon login__block__btn"><i class="zmdi zmdi-check"></i></a>
+				</div>
+			</div>
+		</div>
+		<!-- Javascript -->
+		<!-- Vendors -->
+		<script src="js/jquery-1.10.2.js"></script>
+		<script src="vendors/bower_components/popper.js/dist/umd/popper.min.js"></script>
+		<script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+		<!-- App functions and actions -->
+		<script src="js/app.min.js"></script>
+		<script src="js/url.js"></script>
+		<!-- 自定义的js代码 -->
+		<script type="text/javascript">
+			$(function() {
+				// 设置登陆超链接的单击事件
+				$("#login_href").click(function() {
+					var reg = /^[0-9]+$/;
+					var loginName = $("#login_admin_username");
+					var loginPassword = $("#login_admin_password");
+					// 验证用户名不能为空
+					if (!reg.test(loginName.val())) {
+						swal("用户名不能为空！", "请输入用户名！", "warning")
+							.then(result => {
+								loginName.select();
+							})
+						return;
+					}
+					// 验证密码不能为空
+					if (loginPassword.val() == "") {
+						swal("密码不能为空！", "请输入密码！", "warning")
+							.then((value) => {
+								loginPassword.focus().val();
+							})
+						return;
+					};
+
+					// 向后台发出请求
+					var data = {
+						"adminId": loginName.val(),
+						"adminPassword": loginPassword.val()
+					}
+					$.get( urlArray[1], data, function(result) {
+						// 成功跳转到common.html 页面
+						if (result.code == 0) {
+							// 获得管理员登录信息并放置在session中
+							window.sessionStorage.setItem("loginAdmin",JSON.stringify(result.resultData.loginAdmin));
+							swal("登陆成功", "正在为您自动跳转到商城首页！", "success", {
+								button: false,
+							});
+							setInterval(function() {
+								swal.close();
+								window.location.href = "common.html";
+							}, 1800);
+						} else {
+							swal("登陆失败", result.message, "warning")
+								.then((value) => {
+									loginPassword.val("").select();
+								})
+							return;
+						}
+					})
+				});
+			});
+		</script>
+	</body>
+</html>

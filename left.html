@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<!-- 用于封装页面左侧的内容 -->
+<div class="scrollbar-inner">
+	<!-- 登录用户信息 start -->
+	<div class="user">
+		<div class="user__info" data-toggle="dropdown">
+			<img id="left-admin-image" class="user__img" src="demo/img/profile-pics/8.jpg" alt="">
+			<div>
+				<span class="user__name" id="left-admin-name">vecher</span>
+				<span class="user__email" id="left-admin-power">超级管理员</span>
+				<div class="user__email" id="left-admin-email">745418984@gmail.com</div>
+			</div>
+		</div>
+
+		<div class="dropdown-menu">
+			<a class="dropdown-item" href="">查看</a>
+			<a class="dropdown-item" href="">设置</a>
+			<a class="dropdown-item" href="login.html">注销</a>
+		</div>
+	</div>
+	<!-- 左侧菜单 start -->
+	<ul class="navigation">
+		<!-- 一级菜单  包含二级菜单 -->
+		<li class="navigation__sub" id="admin-menu">
+			<!-- navigation__sub--active 一级菜单激活 -->
+			<a href=""><i class="zmdi zmdi-bug zmdi-hc-fw"></i> 管理员信息</a>
+			<ul>
+				<!-- class="navigation__active" 二级菜单激活 -->
+				<li id="admin-menu-insert"><a href="admin-insert.html">添加管理员</a></li>
+				<li id="admin-menu-query"><a href="admin-query.html">查询管理员</a></li>
+			</ul>
+		</li>
+
+		<!-- 一级菜单  不包含二级菜单 -->
+		<li id="user-menu"><a href="user-manager.html"><i class="zmdi zmdi-assignment-account zmdi-hc-fw"></i> 用 户 管 理</a></li>
+		<!-- 商品管理菜单 -->
+		<li class="navigation__sub" id="goods-menu">
+			<a href=""><i class="zmdi zmdi-case zmdi-hc-fw"></i> 商 品 管 理</a>
+			<ul>
+				<li id="goods-menu-insert"><a href="goods-insert.html">添加商品</a></li>
+				<li id="goods-menu-query"><a href="goods-query.html">查询商品信息</a></li>
+			</ul>
+		</li>
+		<!-- 订单管理菜单 -->
+		<li id="order-menu"><a href="order-manager.html"><i class="zmdi zmdi-mall zmdi-hc-fw"></i> 订 单 管 理</a></li>
+		<!-- 统计模块 -->
+		<li class="navigation__sub">
+			<a href=""><i class="zmdi zmdi-chart zmdi-hc-fw"></i> 统 计 模 块</a>
+			<ul>
+				<li><a href="goods-charts.html">商品统计</a></li>
+				<li><a href="order-charts.html">订单统计</a></li>
+			</ul>
+		</li>
+
+	</ul>
+	<!-- 左侧菜单 end -->
+</div>
+<script type="text/javascript">
+	
+	//获得浏览器中SessionScorage 中登录信息
+	var admin = JSON.parse(window.sessionStorage.getItem("loginAdmin"));
+	if (admin == null) {
+		window.location.href = "login.html";
+	}
+	// 设置管理员的信息
+	$("#left-admin-image").attr("src", admin.adminImage);
+	$("#left-admin-power").text(admin.adminPower == 1 ? "/ 超级管理员" : "/ 普通管理员");
+	$("#left-admin-name").text(admin.adminName);
+	$("#left-admin-email").text(admin.adminEmail);
+	// 设置激活的菜单
+	var menu = window.sessionStorage.getItem("menu");
+	var subMenu = window.sessionStorage.getItem("sub-menu");
+	// 激活一级菜单
+	$("#"+menu).addClass("navigation__sub--active");
+	//激活二级菜单
+	if(subMenu!=null &&subMenu!=""){
+		$("#"+subMenu).addClass("navigation__active");
+	}
+</script>

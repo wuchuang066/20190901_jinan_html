@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>XX商场后台管理系统</title>
+		<!-- 导入图标 -->
+		<link href="img/MSN.ICO" rel="icon" />
+		<!-- 导入CSS文件 -->
+		<!-- Vendor styles -->
+		<link rel="stylesheet" href="vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css">
+		<link rel="stylesheet" href="vendors/bower_components/animate.css/animate.min.css">
+		<link rel="stylesheet" href="vendors/bower_components/jquery.scrollbar/jquery.scrollbar.css">
+		<link rel="stylesheet" href="vendors/bower_components/fullcalendar/dist/fullcalendar.min.css">
+		<link rel="stylesheet" href="vendors/bower_components/select2/dist/css/select2.min.css">
+		<link rel="stylesheet" href="vendors/bower_components/dropzone/dist/dropzone.css">
+		<!-- App styles -->
+		<link rel="stylesheet" href="css/app.min.css">
+	</head>
+	<body data-sa-theme="7">
+
+		<!-- 页面主体的开始 -->
+		<main class="main">
+			<!-- 页面加载动画效果开始 -->
+			<div class="page-loader">
+				<div class="page-loader__spinner">
+					<svg viewBox="25 25 50 50">
+						<circle cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+					</svg>
+				</div>
+			</div>
+			<!-- 页面加载动画效果结束 -->
+			<!-- 页面顶部开始 -->
+			<header class="header">
+				<!-- 移动端菜单按钮开始 -->
+				<div class="navigation-trigger hidden-xl-up" data-sa-action="aside-open" data-sa-target=".sidebar">
+					<i class="zmdi zmdi-menu"></i>
+				</div>
+				<!-- 移动端菜单按钮结束 -->
+				<!-- LOGO开始 -->
+				<div class="logo hidden-sm-down">
+					<h1><a href="index.html">XX商城后台管理系统</a></h1>
+				</div>
+				<!-- LOGO结束 -->
+				<div class="col-md-8"></div>
+				<!-- 时间控件开始 -->
+				<div class="clock hidden-md-down">
+					<div class="time">
+						<span class="time__hours"></span>
+						<span class="time__min"></span>
+						<span class="time__sec"></span>
+					</div>
+				</div>
+				<!-- 时间控件结束 -->
+			</header>
+			<!-- 页面顶部结束 -->
+
+			<!-- 页面左侧开始 -->
+			<aside class="sidebar">
+				<div class="scrollbar-inner">
+					<!-- 登录用户信息开始 -->
+					<div class="user">
+						<div class="user__info" data-toggle="dropdown">
+							<!-- 用户头像 -->
+							<img class="user__img" src="demo/img/profile-pics/8.jpg" alt="">
+							<div>
+								<!-- 用户名 -->
+								<div class="user__name">张三</div>
+								<!-- 用户权限 -->
+								<div class="user__email">超级管理员</div>
+							</div>
+						</div>
+
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="">修改密码</a>
+							<a class="dropdown-item" href="">修改头像</a>
+							<a class="dropdown-item" href="">注销退出</a>
+						</div>
+					</div>
+					<!-- 登录用户信息结束 -->
+					<!-- 左侧菜单开始 -->
+					<ul class="navigation">
+						<!-- 一级菜单(包含二级菜单)开始 -->
+						<li class="navigation__sub navigation__sub--active">
+							<a href=""><i class="zmdi zmdi-shield-security zmdi-hc-fw"></i> 管理员信息</a>
+							<!-- 二级菜单 -->
+							<ul>
+								<li class="navigation__active"><a href="admin-insert.html">新建管理员</a></li>
+								<li><a href="admin-select.html">查询管理员</a></li>
+							</ul>
+						</li>
+						<!-- 一级菜单(包含二级菜单)结束 -->
+
+						<!-- 一级菜单(不包含二级菜单)开始 -->
+						<li><a href="user-select.html"><i class="zmdi zmdi-assignment-account zmdi-hc-fw"></i> 用户管理</a></li>
+						<!-- 一级菜单(不包含二级菜单)结束 -->
+
+						<!-- 一级菜单(包含二级菜单)开始 -->
+						<li class="navigation__sub">
+							<a href=""><i class="zmdi zmdi-palette zmdi-hc-fw"></i> 商品信息</a>
+							<!-- 二级菜单 -->
+							<ul>
+								<li><a href="goods-insert.html">新建商品</a></li>
+								<li><a href="goods-select.html">查询商品</a></li>
+							</ul>
+						</li>
+						<!-- 一级菜单(包含二级菜单)结束 -->
+
+						<!-- 一级菜单(不包含二级菜单)开始 -->
+						<li><a href="order-select.html"><i class="zmdi zmdi-assignment zmdi-hc-fw"></i> 订单管理</a></li>
+						<!-- 一级菜单(不包含二级菜单)结束 -->
+
+						<!-- 一级菜单(包含二级菜单)开始 -->
+						<li class="navigation__sub">
+							<a href=""><i class="zmdi zmdi-chart zmdi-hc-fw"></i> 信息统计</a>
+							<!-- 二级菜单 -->
+							<ul>
+								<li><a href="group-goods.html">商品统计</a></li>
+								<li><a href="group-order.html">订单统计</a></li>
+							</ul>
+						</li>
+						<!-- 一级菜单(包含二级菜单)结束 -->
+					</ul>
+					<!-- 左侧菜单结束 -->
+				</div>
+			</aside>
+			<!-- 页面左侧结束 -->
+
+			<!-- 页面右侧开始 -->
+			<section class="content">
+				<!-- 路径导航开始 -->
+				<nav aria-label="breadcrumb" role="navigation">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="#">管理员信息</a></li>
+						<li class="breadcrumb-item active" aria-current="page">新建管理员</li>
+					</ol>
+				</nav>
+				<!-- 路径导航结束 -->
+				<!-- 右侧主体开始 -->
+				<div class="card">
+					<div class="card-body">
+
+						<div class="form-group col-md-7">
+							<label>管理员姓名</label>
+							<input type="text" class="form-control" autofocus placeholder="请输入管理员姓名……">
+						</div>
+						<div class="form-group col-md-7">
+							<label>管理员密码</label>
+							<input type="password" class="form-control" placeholder="请输入管理员密码……">
+						</div>
+						<div class="form-group col-md-7">
+							<label>确认密码</label>
+							<input type="password" class="form-control" placeholder="请输入确认密码……">
+						</div>
+						<div class="form-group col-md-7">
+							<label>管理员电话</label>
+							<input type="text" class="form-control" maxlength="13" placeholder="请输入管理员电话……">
+						</div>
+						<div class="form-group col-md-7">
+							<label>管理员邮箱</label>
+							<input type="text" class="form-control" placeholder="请输入管理员邮箱……">
+						</div>
+						<div class="form-group col-md-7">
+							<label>管理员权限</label>
+							<select class="select2">
+								<option value="1">超级管理员</option>
+								<option value="2" selected="selected">普通管理员</option>
+							</select>
+						</div>
+						<div class="form-group col-md-7">
+							<label>管理员头像</label>
+							<form class="dropzone" id="dropzone"></form>
+						</div>
+						<!-- text-center:居中，text-right:右对齐-->
+						<div class="form-group col-md-7">
+							<button type="button" class="btn btn-light" id="btn1">新建</button>
+							<button type="button" class="btn btn-light">清空</button>
+						</div>
+
+					</div>
+				</div>
+				<!-- 右侧主体结束 -->
+			</section>
+			<!-- 页面右侧结束 -->
+		</main>
+		<!-- 页面主体的结束 -->
+
+		<!-- 导入JS文件 -->
+		<script src="js/jquery-1.10.2.js"></script>
+		<script src="vendors/bower_components/popper.js/dist/umd/popper.min.js"></script>
+		<script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="vendors/bower_components/jquery.scrollbar/jquery.scrollbar.min.js"></script>
+		<script src="vendors/bower_components/jquery-scrollLock/jquery-scrollLock.min.js"></script>
+
+		<script src="vendors/bower_components/salvattore/dist/salvattore.min.js"></script>
+		<script src="vendors/bower_components/flot/jquery.flot.js"></script>
+		<script src="vendors/bower_components/flot/jquery.flot.resize.js"></script>
+		<script src="vendors/bower_components/flot.curvedlines/curvedLines.js"></script>
+		<script src="vendors/bower_components/jqvmap/dist/jquery.vmap.min.js"></script>
+		<script src="vendors/bower_components/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+		<script src="vendors/bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
+		<script src="vendors/bower_components/peity/jquery.peity.min.js"></script>
+		<script src="vendors/bower_components/moment/min/moment.min.js"></script>
+		<script src="vendors/bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
+		<script src="vendors/bower_components/select2/dist/js/select2.full.min.js"></script>
+		<script src="vendors/bower_components/dropzone/dist/min/dropzone.min.js"></script>
+
+		<!-- 自定义的JS代码 -->
+		<script type="text/javascript">
+			Dropzone.autoDiscover = false; //防止报"Dropzone already attached."的错误
+			$(function() {
+				var uploadFileName = "";
+
+				$("#dropzone").dropzone({
+					url: "",
+					method: "post",
+					paramName: "myFile", //参数名
+					autoProcessQueue: true, //自动上传
+					maxFilesize: 1024, // MB
+					uploadMultiple: false, //是否在一个请求中发送多个文件
+					parallelUploads: 10, //并行处理上传文件数
+					acceptedFiles: ".jpg,.bmp,.gif,.png",
+					dictInvalidFileType: "支持的文件类型是.jpg,.bmp,.gif,.png", //当文件类型不匹配时的提示信息
+					addRemoveLinks: true,
+					dictRemoveFile: "移除文件",
+					dictUploadCanceled: "取消",
+					dictCancelUploadConfirmation: "取消上传该文件?",
+					init: function() {
+						this.on("success", function(file, result) {
+							
+						});
+						this.on("removedfile", function(file) {
+							
+						});
+					}
+				});
+			});
+		</script>
+
+		<script src="js/app.min.js"></script>
+
+	</body>
+</html>

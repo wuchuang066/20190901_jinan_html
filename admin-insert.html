@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>XXXX 商城后台管理系统</title>
+		<!-- 导入图标 -->
+		<link href="img/favicon1.ico" rel="icon">
+		<!-- Vendor styles -->
+		<link rel="stylesheet" href="vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css">
+		<link rel="stylesheet" href="vendors/bower_components/animate.css/animate.min.css">
+		<link rel="stylesheet" href="vendors/bower_components/jquery.scrollbar/jquery.scrollbar.css">
+		<link rel="stylesheet" href="vendors/bower_components/fullcalendar/dist/fullcalendar.min.css">
+		<link rel="stylesheet" href="vendors/bower_components/select2/dist/css/select2.min.css">
+		<link rel="stylesheet" type="text/css" href="vendors/bower_components/dropzone/dist/dropzone.css" />
+
+		<!-- App styles -->
+		<link rel="stylesheet" href="css/app.min.css">
+
+		<style>
+			.sweetAlert {
+			       width: 260px;
+			       margin: 0 auto;
+			       left: 0;
+			       right: 0;
+			   }
+			.spanError{
+				font-size: 10px;
+				color: red;
+			}
+			
+		</style>
+	</head>
+
+	<body data-sa-theme="1">
+		<main class="main">
+			<div class="page-loader">
+				<div class="page-loader__spinner">
+					<svg viewBox="25 25 50 50">
+						<circle cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+					</svg>
+				</div>
+			</div>
+			<!-- 页面顶部开始 -->
+			<header class="header">
+
+			</header>
+			<!-- 页面顶部结束 -->
+			<!-- 页面左侧代码 start -->
+			<aside class="sidebar">
+
+			</aside>
+			<!-- 页面左侧 end -->
+			<!-- 右侧内容开始 -->
+			<section class="content">
+				<nav aria-label="breadcrumb" role="navigation">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="#">管理员信息</a></li>
+						<li class="breadcrumb-item active" aria-current="page">添加管理员</li>
+					</ol>
+				</nav>
+				<div class="card">
+					<div class="card-body">
+						<h4 class="content__title">管理员信息</h4>
+						<!-- <form> -->
+						<div class="form-group  col-lg-5">
+							<label for="">管理员姓名：</label>
+							<!-- 获得焦点 -->
+							<input type="text" autocomplete="off" id="username" class="form-control form-control-sm" placeholder="请输入姓名..."
+							 autofocus="autofocus">
+							<span id="error1" class="spanError">
+							</span>
+						</div>
+						<div class="form-group  col-lg-5">
+							<label for="">管理员密码：</label>
+							<input type="password" id="password1" class="form-control form-control-sm" placeholder="请输入密码...">
+							<span id="error2" class="spanError">
+							</span>
+						</div>
+						<div class="form-group  col-lg-5">
+							<label for="">确认密码：</label>
+							<input type="password" id="password2" class="form-control form-control-sm" placeholder="确认密码...">
+							<span id="error3" class="spanError">
+							</span>
+						</div>
+						<div class="form-group  col-lg-5">
+							<label for="">联系方式：</label>
+							<input type="text" autocomplete="off" id="contact" class="form-control form-control-sm" maxlength="13"
+							 placeholder="请输入联系方式...">
+							<span id="error4" class="spanError">
+							</span>
+						</div>
+						<div class="form-group  col-lg-5">
+							<label for="">邮箱地址：</label>
+							<input autocomplete="off" type="text" id="email" class="form-control form-control-sm" placeholder="请输入邮箱地址...">
+							<span id="error5" class="spanError">
+							</span>
+						</div>
+						<div class="form-group  col-lg-5">
+							<label for="">权限：</label>
+							<select name="" class="select2" id="permission">
+								<option value="2">普通管理员</option>
+								<option value="1">超级管理员</option>
+							</select>
+						</div>
+						<div class="form-group  col-lg-5">
+							<!-- 添加一层div class="dropzone" 防止报"Dropzone already attached."的错误 -->
+							<div class="dropzone">
+								<!-- <form id="dropzone-upload">
+									<!-- <div class="dz-default dz-message"><span>点击上传</span></div> 
+								</form> -->
+							</div>
+						</div>
+						<div class="form-group col-lg-3 text-center">
+							<button type="button" class="btn btn-light" id="insertAdmin">新建</button>
+							<button type="button" class="btn btn-light" id="clearMsg">清空</button>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- 右侧内容结束 -->
+
+		</main>
+		<!-- Javascript -->
+		<!-- 漂亮弹框 开始 -->
+		<script src="js/sweetalert.min.js"></script>
+		<!-- 漂亮弹框 结束 -->
+		<!-- Vendors -->
+		<script src="js/jquery-1.10.2.js"></script>
+		<script src="vendors/bower_components/popper.js/dist/umd/popper.min.js"></script>
+		<script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="vendors/bower_components/jquery.scrollbar/jquery.scrollbar.min.js"></script>
+		<script src="vendors/bower_components/jquery-scrollLock/jquery-scrollLock.min.js"></script>
+
+		<script src="vendors/bower_components/salvattore/dist/salvattore.min.js"></script>
+		<script src="vendors/bower_components/flot/jquery.flot.js"></script>
+		<script src="vendors/bower_components/flot/jquery.flot.resize.js"></script>
+		<script src="vendors/bower_components/flot.curvedlines/curvedLines.js"></script>
+		<script src="vendors/bower_components/jqvmap/dist/jquery.vmap.min.js"></script>
+		<script src="vendors/bower_components/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+		<script src="vendors/bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
+		<script src="vendors/bower_components/peity/jquery.peity.min.js"></script>
+		<script src="vendors/bower_components/moment/min/moment.min.js"></script>
+		<script src="vendors/bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
+		<script src="vendors/bower_components/select2/dist/js/select2.full.min.js"></script>
+		<script src="vendors/bower_components/dropzone/dist/min/dropzone.min.js"></script>
+		<!-- Charts and maps-->
+		<script src="demo/js/flot-charts/curved-line.js"></script>
+		<script src="demo/js/flot-charts/line.js"></script>
+		<!-- <script src="demo/js/flot-charts/dynamic.js"></script> -->
+		<script src="demo/js/flot-charts/chart-tooltips.js"></script>
+		<script src="demo/js/other-charts.js"></script>
+		<script src="demo/js/jqvmap.js"></script>
+		<script src="js/url.js"></script>
+		<!-- 自己写的js代码 -->
+		<script type="text/javascript">
+			//Dropzone Configuration
+			Dropzone.autoDiscover = false; //防止报"Dropzone already attached."的错误
+			// 加载页面头部内容
+			$(".header").load("head.html");
+			// 设置激活菜单
+			window.sessionStorage.removeItem("menu");
+			window.sessionStorage.removeItem("sub-menu");
+			window.sessionStorage.setItem("menu", "admin-menu");
+			window.sessionStorage.setItem("sub-menu", "admin-menu-insert");
+			// 加载页面左侧内容
+			$(".sidebar").load("left.html");
+
+			var filePath = "upload-images/admin-images/";
+			var fileName;
+			var extension;
+			$(function() {
+				// 文件上传插件的配置
+				var uploadFileName = "";
+				var dropz = new Dropzone('div.dropzone', {
+					// $("#dropzone-upload").dropzone({
+					url: urlArray[2], // 上传的url
+					method: "post",
+					paramName: "myFile", //参数名
+					autoProcessQueue: true, //自动上传
+					maxFilesize: 10, // MB
+					uploadMultiple: false, //是否在一个请求中发送多个文件
+					parallelUploads: 1, //并行处理上传文件数
+					acceptedFiles: ".jpg,.bmp,.gif,.png",
+					dictInvalidFileType: "支持的文件类型是.jpg,.bmp,.gif,.png", //当文件类型不匹配时的提示信息
+					addRemoveLinks: true,
+					dictRemoveFile: "移除文件",
+					dictUploadCanceled: "取消",
+					maxFiles: 1, // 一次只能上传一个文件
+					dictCancelUploadConfirmation: "取消上传该文件?",
+					init: function() {
+						this.on("success", function(file, result) {
+							fileName = result.resultData.fileName;
+							extension = result.resultData.extension;
+						});
+						this.on("removedfile", function(file) {
+							if (fileName != "" && extension != "") {
+								var data = {
+									"fileName": fileName + extension
+								};
+								$.get(urlArray[3], data, function(result) {
+									if (result.code != 0) {
+										swal("失败", "", "error", {
+											customClass: "sweetAlert"
+										});
+									} else {
+										fileName = "";
+										extension = "";
+										swal("成功", "", "success", {
+											button: false,
+											className: "sweetAlert"
+										});
+										setInterval(function() {
+											swal.close();
+										}, 1800);
+									}
+								});
+							}
+						});
+					}
+				});
+				// 文件上传结束
+				$("#insertAdmin").click(function() {
+					//校验信息是否合法 合法发送请求,不合法return  并提示错误信息
+					var username = $("#username");
+					var error1 = $("#error1");
+					if (username.val() == "") {
+						error1.text("管理员姓名不能为空！！");
+						username.focus();
+						return false;
+					} else {
+						error1.text("");
+					}
+					var password = $("#password1");
+					var error2 = $("#error2");
+					if (password.val() == "") {
+						error2.text("管理员密码不能为空！！");
+						password.focus();
+						return false;
+					} else {
+						error2.text("");
+					}
+					var password2 = $("#password2");
+					var error3 = $("#error3");
+					if (password2.val() == "") {
+						error3.text("确认密码不能为空！！");
+						password2.focus();
+						return false;
+					} else if (password2.val() != password.val()) {
+						error3.text("两次密码不一致！！");
+						password2.select();
+						return false;
+					} else {
+						error3.text("");
+					}
+					var contact = $("#contact");
+					var error4 = $("#error4");
+					if (contact.val() == "") {
+						error4.text("联系方式不能为空！！");
+						contact.focus();
+						return false;
+					} else {
+						error4.text("");
+					}
+					var email = $("#email");
+					var reg = /^[0-9|A-Z|a-z]+@[0-9|A-Z|a-z]+\.(com|cn)$/;
+					var error5 = $("#error5");
+					if (email.val() == "") {
+						error5.text("邮箱不能为空！！");
+						email.focus();
+						return false;
+					} else if (!reg.test(email.val())) {
+						error5.text("邮箱格式不正确！！");
+						email.focus();
+						return false;
+					} else {
+						error5.text("");
+					}
+					var permission = $("#permission");
+					// 如果用户未指定头像信息，使用默认管理员头像
+					if (fileName == undefined || extension == undefined) {
+						fileName = "admin";
+						extension = ".jpg";
+					}
+					var headImage = filePath + fileName + extension;
+					var data = {
+						"adminName": username.val(),
+						"adminPhone": contact.val(),
+						"adminEmail": email.val(),
+						"adminPassword": password.val(),
+						"adminImage": headImage,
+						"adminPower": permission.val(),
+						"adminState": 1
+					};
+					$.post(urlArray[4], data, function(result) {
+						if (result.code == 0) {
+							swal("新建成功",
+									"您注册的编号为" + result.resultData.adminMsg.adminId, "success")
+								.then(function() {
+									window.location.reload();
+								});
+						} else {
+							swal("新建失败", "请联系管理员！", "error");
+							return;
+						}
+					});
+				});
+
+				//设置清空按钮的单击事件
+				$("#clearMsg").click(function() {
+					var username = $("#username").val("");
+					var password = $("#password1").val("");
+					var password2 = $("#password2").val("");
+					var contact = $("#contact").val("");
+					var email = $("#email").val("");
+					$("#permission").val(['2']).trigger('change');
+					//清空缩略图  有问题
+					dropz.removeAllFiles(true);
+				});
+			});
+		</script>
+	</body>
+	<!-- 放在后面 防止报"Dropzone already attached."的错误 -->
+	<!-- App functions and actions -->
+	<script src="js/app.min.js"></script>
+</html>

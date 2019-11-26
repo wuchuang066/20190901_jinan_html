@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>XXXX 商城后台管理系统</title>
+		<!-- 导入图标 -->
+		<link href="img/favicon1.ico" rel="icon">
+		<!-- Vendor styles -->
+		<link rel="stylesheet" href="vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css">
+		<link rel="stylesheet" href="vendors/bower_components/animate.css/animate.min.css">
+		<link rel="stylesheet" href="vendors/bower_components/jquery.scrollbar/jquery.scrollbar.css">
+		<link rel="stylesheet" href="vendors/bower_components/fullcalendar/dist/fullcalendar.min.css">
+		<link rel="stylesheet" href="vendors/bower_components/select2/dist/css/select2.min.css">
+
+		<!-- App styles -->
+		<link rel="stylesheet" href="css/app.min.css">
+	</head>
+
+	<body data-sa-theme="1">
+		<main class="main">
+			<div class="page-loader">
+				<div class="page-loader__spinner">
+					<svg viewBox="25 25 50 50">
+						<circle cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+					</svg>
+				</div>
+			</div>
+			<!-- 页面顶部开始 -->
+			<header class="header">
+				<!-- 移动端菜单 start-->
+				<div class="navigation-trigger hidden-xl-up" data-sa-action="aside-open" data-sa-target=".sidebar">
+					<i class="zmdi zmdi-menu"></i>
+				</div>
+				<!-- 移动端菜单 end-->
+				<!-- logo start -->
+				<div class="logo hidden-sm-down">
+					<h1><a href="index.html">XXXX 商城后台管理系统</a></h1>
+				</div>
+				<!-- logo end -->
+				<div class="col-lg-8"></div>
+				<!-- 时间控件  start -->
+				<div class="clock hidden-md-down">
+					<div class="time">
+						<span class="time__hours"></span>
+						<span class="time__min"></span>
+						<span class="time__sec"></span>
+					</div>
+				</div>
+				<!-- 时间控件  end -->
+
+			</header>
+			<!-- 页面顶部结束 -->
+			<!-- 页面左侧代码 start -->
+			<aside class="sidebar">
+				<div class="scrollbar-inner">
+					<!-- 登录用户信息 start -->
+					<div class="user">
+						<div class="user__info" data-toggle="dropdown">
+							<img class="user__img" src="demo/img/profile-pics/8.jpg" alt="">
+							<div>
+								<div class="user__name">vecher</div>
+								<div class="user__email">745418984@gmail.com</div>
+							</div>
+						</div>
+
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="">查看</a>
+							<a class="dropdown-item" href="">设置</a>
+							<a class="dropdown-item" href="">注销</a>
+						</div>
+					</div>
+					<!-- 左侧菜单 start -->
+					<ul class="navigation">
+						<!-- 一级菜单  包含二级菜单 -->
+						<li class="navigation__sub">
+							<a href=""><i class="zmdi zmdi-bug zmdi-hc-fw"></i> 管理员信息</a>
+							<ul>
+								<li><a href="admin-insert.html">添加管理员</a></li>
+								<li><a href="admin-query.html">查询管理员</a></li>
+							</ul>
+						</li>
+
+						<!-- 一级菜单  不包含二级菜单 -->
+						<li><a href="user-manager.html"><i class="zmdi zmdi-assignment-account zmdi-hc-fw"></i> 用 户 管 理</a></li>
+						<!-- 商品管理菜单 -->
+						<li class="navigation__sub">
+							<a href=""><i class="zmdi zmdi-case zmdi-hc-fw"></i> 商 品 管 理</a>
+							<ul>
+								<li><a href="goods-insert.html">添加商品</a></li>
+								<li><a href="goods-query.html">查询商品信息</a></li>
+							</ul>
+						</li>
+						<!-- 订单管理菜单 -->
+						<li><a href="order-manager.html"><i class="zmdi zmdi-mall zmdi-hc-fw"></i> 订 单 管 理</a></li>
+						<!-- 统计模块 -->
+						<li class="navigation__sub">
+							<a href=""><i class="zmdi zmdi-chart zmdi-hc-fw"></i> 统 计 模 块</a>
+							<ul>
+								<li><a href="goods-charts.html">商品统计</a></li>
+								<li><a href="order-charts.html">订单统计</a></li>
+							</ul>
+						</li>
+
+					</ul>
+					<!-- 左侧菜单 end -->
+
+				</div>
+			</aside>
+			<!-- 页面左侧 end -->
+			<!-- 右侧内容开始 -->
+			<section class="content">
+				<nav aria-label="breadcrumb" role="navigation">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="#">Home</a></li>
+					
+					</ol>
+				</nav>
+				<div class="card">
+					<div class="card-body"></div>
+				</div>
+			</section>
+			<!-- 右侧内容结束 -->
+
+		</main>
+		<!-- Javascript -->
+		<!-- Vendors -->
+		<script src="js/jquery-1.10.2.js"></script>
+		<script src="vendors/bower_components/popper.js/dist/umd/popper.min.js"></script>
+		<script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="vendors/bower_components/jquery.scrollbar/jquery.scrollbar.min.js"></script>
+		<script src="vendors/bower_components/jquery-scrollLock/jquery-scrollLock.min.js"></script>
+
+		<script src="vendors/bower_components/salvattore/dist/salvattore.min.js"></script>
+		<script src="vendors/bower_components/flot/jquery.flot.js"></script>
+		<script src="vendors/bower_components/flot/jquery.flot.resize.js"></script>
+		<script src="vendors/bower_components/flot.curvedlines/curvedLines.js"></script>
+		<script src="vendors/bower_components/jqvmap/dist/jquery.vmap.min.js"></script>
+		<script src="vendors/bower_components/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+		<script src="vendors/bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
+		<script src="vendors/bower_components/peity/jquery.peity.min.js"></script>
+		<script src="vendors/bower_components/moment/min/moment.min.js"></script>
+		<script src="vendors/bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
+		<script src="vendors/bower_components/select2/dist/js/select2.full.min.js"></script>
+
+		<!-- Charts and maps-->
+		<script src="demo/js/flot-charts/curved-line.js"></script>
+		<script src="demo/js/flot-charts/line.js"></script>
+		<!-- <script src="demo/js/flot-charts/dynamic.js"></script> -->
+		<script src="demo/js/flot-charts/chart-tooltips.js"></script>
+		<script src="demo/js/other-charts.js"></script>
+		<script src="demo/js/jqvmap.js"></script>
+
+		<!-- App functions and actions -->
+		<script src="js/app.min.js"></script>
+
+		<!-- 自己写的js代码 -->
+		<script type="text/javascript">
+
+		</script>
+	</body>
+</html>
