@@ -122,6 +122,8 @@
 						if (result.code == 0) {
 							// 获得管理员登录信息并放置在session中
 							window.sessionStorage.setItem("loginAdmin",JSON.stringify(result.resultData.loginAdmin));
+							// 保存一级类别的信息
+							window.sessionStorage.setItem("receivers",JSON.stringify(result.resultData.receivers));
 							swal("登陆成功", "正在为您自动跳转到商城首页！", "success", {
 								button: false,
 							});
@@ -130,7 +132,7 @@
 								window.location.href = "common.html";
 							}, 1800);
 						} else {
-							swal("登陆失败", result.message, "warning")
+							swal("登陆失败", result.message+"或当前账号已被禁用！", "warning")
 								.then((value) => {
 									loginPassword.val("").select();
 								})

@@ -1,230 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<title>XXXX 商城后台管理系统</title>
-		<!-- 导入图标 -->
-		<link href="img/favicon1.ico" rel="icon">
-		<!-- Vendor styles -->
-		<link rel="stylesheet" href="vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css">
-		<link rel="stylesheet" href="vendors/bower_components/animate.css/animate.min.css">
-		<link rel="stylesheet" href="vendors/bower_components/jquery.scrollbar/jquery.scrollbar.css">
-		<link rel="stylesheet" href="vendors/bower_components/fullcalendar/dist/fullcalendar.min.css">
-		<link rel="stylesheet" href="vendors/bower_components/select2/dist/css/select2.min.css">
-		<link rel="stylesheet" type="text/css" href="vendors/bower_components/dropzone/dist/dropzone.css" />
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>XXXX 商城后台管理系统</title>
+    <!-- 导入图标 -->
+    <link href="img/favicon1.ico" rel="icon">
+    <!-- Vendor styles -->
+    <link rel="stylesheet"
+          href="vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="vendors/bower_components/animate.css/animate.min.css">
+    <link rel="stylesheet" href="vendors/bower_components/jquery.scrollbar/jquery.scrollbar.css">
+    <link rel="stylesheet" href="vendors/bower_components/fullcalendar/dist/fullcalendar.min.css">
+    <link rel="stylesheet" href="vendors/bower_components/select2/dist/css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="vendors/bower_components/dropzone/dist/dropzone.css"/>
 
-		<!-- App styles -->
-		<link rel="stylesheet" href="css/app.min.css">
-		<style type="text/css">
-			#errorPrice,
-			#errorPrice2 {
-				color: red;
-				font-size: 12px;
-			}
-		</style>
-	</head>
+    <!-- App styles -->
+    <link rel="stylesheet" href="css/app.min.css">
+    <style type="text/css">
+        #errorPrice,
+        #errorPrice2 {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
+</head>
 
-	<body data-sa-theme="1">
-		<main class="main">
-			<div class="page-loader">
-				<div class="page-loader__spinner">
-					<svg viewBox="25 25 50 50">
-						<circle cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
-					</svg>
-				</div>
-			</div>
-			<!-- 页面顶部开始 -->
-			<header class="header">
+<body data-sa-theme="1">
+<main class="main">
+    <div class="page-loader">
+        <div class="page-loader__spinner">
+            <svg viewBox="25 25 50 50">
+                <circle cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+            </svg>
+        </div>
+    </div>
+    <!-- 页面顶部开始 -->
+    <header class="header">
 
 
-			</header>
-			<!-- 页面顶部结束 -->
-			<!-- 页面左侧代码 start -->
-			<aside class="sidebar">
+    </header>
+    <!-- 页面顶部结束 -->
+    <!-- 页面左侧代码 start -->
+    <aside class="sidebar">
 
-			</aside>
-			<!-- 页面左侧 end -->
-			<!-- 右侧内容开始 -->
-			<section class="content">
-				<nav aria-label="breadcrumb" role="navigation">
-					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="#">商品管理</a></li>
-						<li class="breadcrumb-item active" aria-current="page">添加商品</li>
-					</ol>
-				</nav>
-				<div class="card">
-					<div class="card-body">
-						<div class="row">
-							<div id="" class="form-group col-lg-6">
-								<label for="">商品名称：</label>
-								<!-- 获得焦点 -->
-								<input type="text" autocomplete="off" id="goodsname" class="form-control form-control-sm" placeholder="请输入商品名称..."
-								 autofocus="autofocus" style="padding-top: 10px;">
-							</div>
-							<div id="" class="form-group col-lg-6">
-								<label for="">热卖商品：</label>
-								<!-- 获得焦点 -->
-								<select name="" class="select2">
-									<option value="1">热卖商品</option>
-									<option value="0">非热卖商品</option>
-								</select>
-							</div>
-						</div>
-						<div class="row">
-							<div id="" class="form-group col-lg-6">
-								<label for="">商品价格：</label>
-								<!-- 获得焦点 -->
-								<input type="text" autocomplete="off" id="goodsPrice" class="form-control form-control-sm" placeholder="请输入商品价格..."
-								 style="padding-top: 10px;">
-								<span id="errorPrice">
+    </aside>
+    <!-- 页面左侧 end -->
+    <!-- 右侧内容开始 -->
+    <section class="content">
+        <nav aria-label="breadcrumb" role="navigation">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">商品管理</a></li>
+                <li class="breadcrumb-item active" aria-current="page">添加商品</li>
+            </ol>
+        </nav>
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="form-group col-lg-6">
+                        <label for="goodsName">商品名称：</label>
+                        <!-- 获得焦点 -->
+                        <input type="text" autocomplete="off" id="goodsName" class="form-control form-control-sm"
+                               placeholder="请输入商品名称..."
+                               autofocus="autofocus" style="padding-top: 10px;">
+                    </div>
+                    <div class="form-group col-lg-6">
+                        <label>热卖商品：</label>
+                        <!-- 获得焦点 -->
+                        <select name="" class="select2">
+                            <option value="1">热卖商品</option>
+                            <option value="0">非热卖商品</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-lg-6">
+                        <label for="goodsPrice">商品价格：</label>
+                        <!-- 获得焦点 -->
+                        <input type="text" autocomplete="off" id="goodsPrice" class="form-control form-control-sm"
+                               placeholder="请输入商品价格..."
+                               style="padding-top: 10px;">
+                        <span id="errorPrice">
 								</span>
-							</div>
-							<div id="" class="form-group col-lg-6">
-								<label for="">商品折扣价：</label>
-								<!-- 获得焦点 -->
-								<input type="text" autocomplete="off" id="goodsDiscount" class="form-control form-control-sm" placeholder="请输入商品折扣价..."
-								 style="padding-top: 10px;">
-								<span id="errorPrice2">
+                    </div>
+                    <div class="form-group col-lg-6">
+                        <label for="goodsDiscount">商品折扣价：</label>
+                        <!-- 获得焦点 -->
+                        <input type="text" autocomplete="off" id="goodsDiscount" class="form-control form-control-sm"
+                               placeholder="请输入商品折扣价..."
+                               style="padding-top: 10px;">
+                        <span id="errorPrice2">
 								</span>
-							</div>
-						</div>
+                    </div>
+                </div>
 
-						<div class="row">
-							<div class="form-group col-lg-6">
-								<label for="">热卖：</label>
-								<select class="select2">
-									<option value="">热卖</option>
-								</select>
-							</div>
-							<div class="form-group col-lg-6">
-								<label for="">新品：</label>
-								<select class="select2">
-									<option value="">新品</option>
-								</select>
-							</div>
-						</div>
-						<div class="row">
-							<div class="form-group col-lg-6">
-								<label for="">类别：</label>
-								<select class="select2">
-									<option value="">一级类别</option>
-								</select>
-							</div>
-							<div class="form-group col-lg-6">
-								<label for="">类别：</label>
-								<select class="select2">
-									<option value="">二级类别</option>
-								</select>
-							</div>
-						</div>
-						<div class="row">
-							<div class="form-group col-lg-6">
-								<label for="">库存状态：</label>
-								<select class="select2">
-									<option value="">有货</option>
-								</select>
-							</div>
-							<div class="form-group col-lg-6">
-								<label for="">商品简介：</label>
-								<input type="text" autocomplete="off" id="goodsname" class="form-control form-control-sm" placeholder="请输入商品简介..."
-								 style="padding-top: 10px;" />
-							</div>
-						</div>
-						<div class="row">
-							<div class="form-group col-lg-6">
-								<label for="">商品详情：</label>
-								<textarea rows="7" class="form-control"></textarea>
-							</div>
-							<div class="form-group col-lg-6">
-								<label for="">商品图片：</label>
-								<form class="dropzone" id="dropzone-upload">
-									<div class="dz-default dz-message"><span>点击上传</span></div>
-								</form>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-lg-12 text-center">
-								<button class="btn btn-light btn--icon-text" id="btn1"> 保存</button>
-								<button class="btn btn-light btn--icon-text" id="btn2"> 重置</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!-- 右侧内容结束 -->
+                <div class="row">
+                    <div class="form-group col-lg-6">
+                        <label>热卖：</label>
+                        <select class="select2">
+                            <option value="">热卖</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-lg-6">
+                        <label>新品：</label>
+                        <select class="select2">
+                            <option value="">新品</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-lg-6">
+                        <label>类别：</label>
+                        <select class="select2" id="receivers">
+                            <option value="">一级类别</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-lg-6">
+                        <label for="">类别：</label>
+                        <select class="select2" id="levels">
+                            <option value="">二级类别</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-lg-6">
+                        <label for="">库存状态：</label>
+                        <select class="select2">
+                            <option value="">有货</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-lg-6">
+                        <label for="">商品简介：</label>
+                        <input type="text" autocomplete="off" id="goodsDesc" class="form-control form-control-sm"
+                               placeholder="请输入商品简介..."
+                               style="padding-top: 10px;"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-lg-6">
+                        <label for="">商品详情：</label>
+                        <textarea rows="7" class="form-control"></textarea>
+                    </div>
+                    <div class="form-group col-lg-6">
+                        <label for="">商品图片：</label>
+                        <form class="dropzone" id="dropzone-upload">
+                            <div class="dz-default dz-message"><span>点击上传</span></div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <button class="btn btn-light btn--icon-text" id="btn1"> 保存</button>
+                        <button class="btn btn-light btn--icon-text" id="btn2"> 重置</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 右侧内容结束 -->
 
-		</main>
-		<!-- Javascript -->
-		<!-- Vendors -->
-		<script src="js/jquery-1.10.2.js"></script>
-		<script src="vendors/bower_components/popper.js/dist/umd/popper.min.js"></script>
-		<script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-		<script src="vendors/bower_components/jquery.scrollbar/jquery.scrollbar.min.js"></script>
-		<script src="vendors/bower_components/jquery-scrollLock/jquery-scrollLock.min.js"></script>
+</main>
+<!-- Javascript -->
+<!-- Vendors -->
+<script src="js/jquery-1.10.2.js"></script>
+<script src="vendors/bower_components/popper.js/dist/umd/popper.min.js"></script>
+<script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="vendors/bower_components/jquery.scrollbar/jquery.scrollbar.min.js"></script>
+<script src="vendors/bower_components/jquery-scrollLock/jquery-scrollLock.min.js"></script>
 
-		<script src="vendors/bower_components/salvattore/dist/salvattore.min.js"></script>
-		<script src="vendors/bower_components/flot/jquery.flot.js"></script>
-		<script src="vendors/bower_components/flot/jquery.flot.resize.js"></script>
-		<script src="vendors/bower_components/flot.curvedlines/curvedLines.js"></script>
-		<script src="vendors/bower_components/jqvmap/dist/jquery.vmap.min.js"></script>
-		<script src="vendors/bower_components/jqvmap/dist/maps/jquery.vmap.world.js"></script>
-		<script src="vendors/bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
-		<script src="vendors/bower_components/peity/jquery.peity.min.js"></script>
-		<script src="vendors/bower_components/moment/min/moment.min.js"></script>
-		<script src="vendors/bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
-		<script src="vendors/bower_components/select2/dist/js/select2.full.min.js"></script>
-		<script src="vendors/bower_components/dropzone/dist/min/dropzone.min.js"></script>
+<script src="vendors/bower_components/salvattore/dist/salvattore.min.js"></script>
+<script src="vendors/bower_components/flot/jquery.flot.js"></script>
+<script src="vendors/bower_components/flot/jquery.flot.resize.js"></script>
+<script src="vendors/bower_components/flot.curvedlines/curvedLines.js"></script>
+<script src="vendors/bower_components/jqvmap/dist/jquery.vmap.min.js"></script>
+<script src="vendors/bower_components/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+<script src="vendors/bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
+<script src="vendors/bower_components/peity/jquery.peity.min.js"></script>
+<script src="vendors/bower_components/moment/min/moment.min.js"></script>
+<script src="vendors/bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
+<script src="vendors/bower_components/select2/dist/js/select2.full.min.js"></script>
+<script src="vendors/bower_components/dropzone/dist/min/dropzone.min.js"></script>
 
-		<!-- Charts and maps-->
-		<script src="demo/js/flot-charts/curved-line.js"></script>
-		<script src="demo/js/flot-charts/line.js"></script>
-		<!-- <script src="demo/js/flot-charts/dynamic.js"></script> -->
-		<script src="demo/js/flot-charts/chart-tooltips.js"></script>
-		<script src="demo/js/other-charts.js"></script>
-		<script src="demo/js/jqvmap.js"></script>
-		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+<!-- Charts and maps-->
+<script src="demo/js/flot-charts/curved-line.js"></script>
+<script src="demo/js/flot-charts/line.js"></script>
+<!-- <script src="demo/js/flot-charts/dynamic.js"></script> -->
+<script src="demo/js/flot-charts/chart-tooltips.js"></script>
+<script src="demo/js/other-charts.js"></script>
+<script src="demo/js/jqvmap.js"></script>
+<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
 
-		<!-- App functions and actions -->
-		<script src="js/app.min.js"></script>
-		<script src="js/url.js"></script>
-		<!-- 自己写的js代码 -->
-		<script type="text/javascript">
-			// 加载页面头部内容
-			$(".header").load("head.html");
-			// 设置激活菜单
-			window.sessionStorage.removeItem("menu");
-			window.sessionStorage.removeItem("sub-menu");
-			window.sessionStorage.setItem("menu", "goods-menu");
-			window.sessionStorage.setItem("sub-menu", "goods-menu-insert");
-			// 加载页面左侧内容
-			$(".sidebar").load("left.html");
-			$(function() {
-				$("#btn1").click(function() {
-					var price1 = $("#goodsPrice");
-					var price2 = $("#goodsDiscount");
-					var errorPrice = $("#errorPrice");
-					var errorPrice2 = $("#errorPrice2");
-					if (!isPrice(price1.val())) {
-						errorPrice.text("商品价格格式错误");
-						price1.select();
-						return false;
-					} else if (price2.val() != "" && !isPrice(price2.val())) {
-						errorPrice.text("");
-						errorPrice2.text("商品折扣价格式错误");
-						price2.select();
-						return false;
-					} else if (parseFloat(price1.val()) <= parseFloat(price2.val())) {
-						errorPrice.text("");
-						errorPrice2.text("商品折扣价不能大于等于商品价格");
-						price2.select();
-						return false;
-					} else {
-						errorPrice.text("");
-						errorPrice2.text("");
-					}
-				});
-			});
-		</script>
-	</body>
+<!-- App functions and actions -->
+<script src="js/app.min.js"></script>
+<script src="js/url.js"></script>
+<!-- 下拉列表js -->
+<script src="js/select1.js"></script>
+<!-- 自己写的js代码 -->
+<script>
+    // 加载页面头部内容
+    $(".header").load("head.html");
+    // 设置激活菜单
+    window.sessionStorage.removeItem("menu");
+    window.sessionStorage.removeItem("sub-menu");
+    window.sessionStorage.setItem("menu", "goods-menu");
+    window.sessionStorage.setItem("sub-menu", "goods-menu-insert");
+    // 加载页面左侧内容
+    $(".sidebar").load("left.html");
+    $(function () {
+        // 添加一级下拉菜单
+        addReceiverSpinner($("#receivers"));
+        $("#btn1").click(function () {
+            var price1 = $("#goodsPrice");
+            var price2 = $("#goodsDiscount");
+            var errorPrice = $("#errorPrice");
+            var errorPrice2 = $("#errorPrice2");
+            if (!isPrice(price1.val())) {
+                errorPrice.text("商品价格格式错误");
+                price1.select();
+                return false;
+            } else if (price2.val() != "" && !isPrice(price2.val())) {
+                errorPrice.text("");
+                errorPrice2.text("商品折扣价格式错误");
+                price2.select();
+                return false;
+            } else if (parseFloat(price1.val()) <= parseFloat(price2.val())) {
+                errorPrice.text("");
+                errorPrice2.text("商品折扣价不能大于商品价格");
+                price2.select();
+                return false;
+            } else {
+                errorPrice.text("");
+                errorPrice2.text("");
+            }
+        });
+    });
+</script>
+</body>
 </html>

@@ -1,8 +1,11 @@
 let urlArray = new Array(100);
+
 // admin request
 const REQUEST_ADMIN = "/admin/";
 // file request
 const REQUEST_FILE = "/file/";
+// user request
+const REQUEST_USER = "/user/";
 
 // BaseUrl 
 urlArray[0] = "http://localhost:8080/shopping_manage";
@@ -20,3 +23,10 @@ urlArray[5] = urlArray[0] + REQUEST_ADMIN + "select/";
 urlArray[6] = urlArray[0] + REQUEST_ADMIN + "update";
 // 通过adminId 主键查询管理员信息
 urlArray[7] = urlArray[0] + REQUEST_ADMIN + "selectByAdminId/";
+
+// 通过user 查询用户信息
+urlArray[8] = urlArray[0] + REQUEST_USER + "selectUsersPage/";
+// 修改用户状态
+urlArray[9] = urlArray[0] + REQUEST_USER + "updateUserState";
+
+

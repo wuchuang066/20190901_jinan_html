@@ -1,390 +1,429 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<title>XXXX 商城后台管理系统</title>
-		<!-- 导入图标 -->
-		<link href="img/favicon1.ico" rel="icon">
-		<!-- Vendor styles -->
-		<link rel="stylesheet" href="vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css">
-		<link rel="stylesheet" href="vendors/bower_components/animate.css/animate.min.css">
-		<link rel="stylesheet" href="vendors/bower_components/jquery.scrollbar/jquery.scrollbar.css">
-		<link rel="stylesheet" href="vendors/bower_components/fullcalendar/dist/fullcalendar.min.css">
-		<link rel="stylesheet" href="vendors/bower_components/select2/dist/css/select2.min.css">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>XXXX 商城后台管理系统</title>
+    <!-- 导入图标 -->
+    <link href="img/favicon1.ico" rel="icon">
+    <!-- Vendor styles -->
+    <link rel="stylesheet"
+          href="vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="vendors/bower_components/animate.css/animate.min.css">
+    <link rel="stylesheet" href="vendors/bower_components/jquery.scrollbar/jquery.scrollbar.css">
+    <link rel="stylesheet" href="vendors/bower_components/fullcalendar/dist/fullcalendar.min.css">
+    <link rel="stylesheet" href="vendors/bower_components/select2/dist/css/select2.min.css">
 
-		<!-- App styles -->
-		<link rel="stylesheet" href="css/app.min.css">
-	</head>
+    <!-- App styles -->
+    <link rel="stylesheet" href="css/app.min.css">
+</head>
 
-	<body data-sa-theme="1">
-		<main class="main">
-			<div class="page-loader">
-				<div class="page-loader__spinner">
-					<svg viewBox="25 25 50 50">
-						<circle cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
-					</svg>
-				</div>
-			</div>
-			<!-- 页面顶部开始 -->
-			<header class="header">
+<body data-sa-theme="1">
+<main class="main">
+    <div class="page-loader">
+        <div class="page-loader__spinner">
+            <svg viewBox="25 25 50 50">
+                <circle cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+            </svg>
+        </div>
+    </div>
+    <!-- 页面顶部开始 -->
+    <header class="header">
 
-			</header>
-			<!-- 页面顶部结束 -->
-			<!-- 页面左侧代码 start -->
-			<aside class="sidebar">
+    </header>
+    <!-- 页面顶部结束 -->
+    <!-- 页面左侧代码 start -->
+    <aside class="sidebar">
 
-			</aside>
-			<!-- 页面左侧 end -->
-			<!-- 右侧内容开始 -->
-			<section class="content">
-				<nav aria-label="breadcrumb" role="navigation">
-					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="#">管理员信息</a></li>
-						<li class="breadcrumb-item active" aria-current="page">查询管理员</li>
-					</ol>
-				</nav>
-				<div class="card">
-					<div class="card-body">
-						<!-- 查询条件开始 -->
-						<div class="row">
-							<div class="col-lg-3">
-								<input id="admin-name" type="text" class="form-control" placeholder="请输入要查询的管理员姓名...">
-							</div>
-							<div class="col-lg-3">
-								<select class="select2" id="admin-power">
-									<option value="-1">不限</option>
-									<option value="1">超级管理员</option>
-									<option value="2">普通管理员</option>
-								</select>
-							</div>
-							<div class="col-lg-3">
-								<button class="btn btn-light btn--icon-text" id="select-btn"><i class="zmdi zmdi-search"></i> Search</button>
-							</div>
-						</div>
-						<!-- 查询条件结束 -->
-						<br>
-						<table class="table table-striped table-hover">
-							<thead>
-								<tr>
-									<th>序号</th>
-									<th>管理员编号</th>
-									<th>管理员姓名</th>
-									<th>管理员电话</th>
-									<th>管理员邮箱</th>
-									<th>管理员权限</th>
-									<th>状态</th>
-								</tr>
-							</thead>
-							<tbody id="adminTbody">
-								<tr>
-									<td colspan='7'> 请点击查询按钮！</td>
-								</tr>
-								<!-- 	<tr>
-									<td>1</td>
-									<td>01</td>
-									<td><a href="#" data-toggle="modal" data-target="#updateAdminMessage">张三</a></td>
-									<td>13800000000</td>
-									<td>2734637@qq.com</td>
-									<td>普通管理员</td>
-									<td>
-										<div class="toggle-switch">
-											<input type="checkbox" class="toggle-switch__checkbox">
-											<i class="toggle-switch__helper"></i>
-										</div>
-									</td>
-								</tr> -->
-								<!-- <tr>
-									<td>1</td>
-									<td>01</td>
-									<td>张三</td>
-									<td>13800000000</td>
-									<td>2734637@qq.com</td>
-									<td>普通管理员</td>
-									<td>
-										<div class="toggle-switch">
-											<input type="checkbox" class="toggle-switch__checkbox asdf" checked="">
-											<i class="toggle-switch__helper"></i>
-										</div>
-									</td>
-								</tr> -->
-							</tbody>
+    </aside>
+    <!-- 页面左侧 end -->
+    <!-- 右侧内容开始 -->
+    <section class="content">
+        <nav aria-label="breadcrumb" role="navigation">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">管理员信息</a></li>
+                <li class="breadcrumb-item active" aria-current="page">查询管理员</li>
+            </ol>
+        </nav>
+        <div class="card">
+            <div class="card-body">
+                <!-- 查询条件开始 -->
+                <div class="row">
+                    <div class="col-lg-3">
+                        <input id="admin-name" type="text" class="form-control" placeholder="请输入要查询的管理员姓名...">
+                    </div>
+                    <div class="col-lg-3">
+                        <select class="select2" id="admin-power">
+                            <option value="-1">不限</option>
+                            <option value="1">超级管理员</option>
+                            <option value="2">普通管理员</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-3">
+                        <button class="btn btn-light btn--icon-text" id="select-btn"><i class="zmdi zmdi-search"></i>
+                            Search
+                        </button>
+                    </div>
+                </div>
+                <!-- 查询条件结束 -->
+                <br>
+                <table class="table table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>管理员编号</th>
+                        <th>管理员姓名</th>
+                        <th>管理员电话</th>
+                        <th>管理员邮箱</th>
+                        <th>管理员权限</th>
+                        <th>状态</th>
+                    </tr>
+                    </thead>
+                    <tbody id="adminTbody">
+                    <!-- 	<tr>
+                        <td>1</td>
+                        <td>01</td>
+                        <td><a href="#" data-toggle="modal" data-target="#updateAdminMessage">张三</a></td>
+                        <td>13800000000</td>
+                        <td>2734637@qq.com</td>
+                        <td>普通管理员</td>
+                        <td>
+                            <div class="toggle-switch">
+                                <input type="checkbox" class="toggle-switch__checkbox">
+                                <i class="toggle-switch__helper"></i>
+                            </div>
+                        </td>
+                    </tr> -->
+                    <!-- <tr>
+                        <td>1</td>
+                        <td>01</td>
+                        <td>张三</td>
+                        <td>13800000000</td>
+                        <td>2734637@qq.com</td>
+                        <td>普通管理员</td>
+                        <td>
+                            <div class="toggle-switch">
+                                <input type="checkbox" class="toggle-switch__checkbox asdf" checked="">
+                                <i class="toggle-switch__helper"></i>
+                            </div>
+                        </td>
+                    </tr> -->
+                    </tbody>
 
-						</table>
-						<nav>
-							<ul class="pagination justify-content-center" id="adminPageBtns">
-								<!-- <li class="page-item pagination-prev"><a class="page-link" href="#"></a></li>
-								<li class="page-item"><a class="page-link" href="#">1</a></li>
-								<li class="page-item"><a class="page-link" href="#">2</a></li>
-								<li class="page-item"><a class="page-link" href="#">3</a></li>
-								<li class="page-item"><a class="page-link" href="#">4</a></li>
-								<li class="page-item"><a class="page-link" href="#">5</a></li>
-								<li class="page-item"><a class="page-link" href="#">6</a></li>
-								<li class="page-item pagination-next"><a class="page-link" href="#"></a></li> -->
-							</ul>
-						</nav>
+                </table>
+                <nav>
+                    <ul class="pagination justify-content-center" id="adminPageBtns">
+                        <!-- <li class="page-item pagination-prev"><a class="page-link" href="#"></a></li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">4</a></li>
+                        <li class="page-item"><a class="page-link" href="#">5</a></li>
+                        <li class="page-item"><a class="page-link" href="#">6</a></li>
+                        <li class="page-item pagination-next"><a class="page-link" href="#"></a></li> -->
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </section>
+    <!-- 右侧内容结束 -->
 
-					</div>
-			</section>
-			<!-- 右侧内容结束 -->
+</main>
+<!-- 模态框 start -->
+<div class="modal fade" id="updateAdminMessage" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- 模态框顶部 -->
+            <div class="modal-header">
+                <h5 class="modal-title pull-left">Admin Message</h5>
+            </div>
+            <!-- 模态框中间部分 -->
+            <div class="modal-body">
+                <!-- 添加隐藏表单域 保存管理员编号 和页码-->
+                <input type="hidden" id="updateAdminId">
+                <input type="hidden" id="adminPage" value="1">
+                <div class="row">
+                    <div class="col-lg-3 text-center" style="padding-top: 8px;">管理员姓名:</div>
+                    <div class="col-lg-9"><input type="text" class="form-control" id="updateAdminName"></div>
+                </div>
+                <div class="row" style="margin-top:10px">
+                    <div class="col-lg-3 text-center" style="padding-top: 8px;">管理员电话:</div>
+                    <div class="col-lg-9"><input type="text" class="form-control" id="updateAdminPhone"></div>
+                </div>
+                <div class="row" style="margin-top:10px">
+                    <div class="col-lg-3 text-center" style="padding-top: 8px;">管理员邮箱:</div>
+                    <div class="col-lg-9"><input type="text" class="form-control" id="updateAdminEmail"></div>
+                </div>
 
-		</main>
-		<!-- 模态框 start -->
-		<div class="modal fade" id="updateAdminMessage" tabindex="-1">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<!-- 模态框顶部 -->
-					<div class="modal-header">
-						<h5 class="modal-title pull-left">Admin Message</h5>
-					</div>
-					<!-- 模态框中间部分 -->
-					<div class="modal-body">
-						<!-- 添加隐藏表单域 保存管理员编号 和页码-->
-						<input type="hidden" id="updateAdminId">
-						<input type="hidden" id="adminPage" value="1">
-						<div class="row">
-							<div class="col-lg-3 text-center" style="padding-top: 8px;">管理员姓名:</div>
-							<div class="col-lg-9"><input type="text" class="form-control" id="updateAdminName"></div>
-						</div>
-						<div class="row" style="margin-top:10px">
-							<div class="col-lg-3 text-center" style="padding-top: 8px;">管理员电话:</div>
-							<div class="col-lg-9"><input type="text" class="form-control" id="updateAdminPhone"></div>
-						</div>
-						<div class="row" style="margin-top:10px">
-							<div class="col-lg-3 text-center" style="padding-top: 8px;">管理员邮箱:</div>
-							<div class="col-lg-9"><input type="text" class="form-control" id="updateAdminEmail"></div>
-						</div>
+            </div>
 
-					</div>
+            <!-- 模态框底部 -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-link" id="updateAdminMsg">修改</button>
+                <button type="button" class="btn btn-link" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 模态框 end -->
 
-					<!-- 模态框底部 -->
-					<div class="modal-footer">
-						<button type="button" class="btn btn-link" id="updateAdminMsg">修改</button>
-						<button type="button" class="btn btn-link" data-dismiss="modal">关闭</button>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- 模态框 end -->
+<!-- Javascript -->
+<!-- 漂亮弹框 开始 -->
+<script src="js/sweetalert.min.js"></script>
+<!-- 漂亮弹框 结束 -->
+<!-- Vendors -->
+<script src="js/jquery-1.10.2.js"></script>
+<script src="vendors/bower_components/popper.js/dist/umd/popper.min.js"></script>
+<script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="vendors/bower_components/jquery.scrollbar/jquery.scrollbar.min.js"></script>
+<script src="vendors/bower_components/jquery-scrollLock/jquery-scrollLock.min.js"></script>
 
-		<!-- Javascript -->
-		<!-- 漂亮弹框 开始 -->
-		<script src="js/sweetalert.min.js"></script>
-		<!-- 漂亮弹框 结束 -->
-		<!-- Vendors -->
-		<script src="js/jquery-1.10.2.js"></script>
-		<script src="vendors/bower_components/popper.js/dist/umd/popper.min.js"></script>
-		<script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-		<script src="vendors/bower_components/jquery.scrollbar/jquery.scrollbar.min.js"></script>
-		<script src="vendors/bower_components/jquery-scrollLock/jquery-scrollLock.min.js"></script>
+<script src="vendors/bower_components/salvattore/dist/salvattore.min.js"></script>
+<script src="vendors/bower_components/flot/jquery.flot.js"></script>
+<script src="vendors/bower_components/flot/jquery.flot.resize.js"></script>
+<script src="vendors/bower_components/flot.curvedlines/curvedLines.js"></script>
+<script src="vendors/bower_components/jqvmap/dist/jquery.vmap.min.js"></script>
+<script src="vendors/bower_components/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+<script src="vendors/bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
+<script src="vendors/bower_components/peity/jquery.peity.min.js"></script>
+<script src="vendors/bower_components/moment/min/moment.min.js"></script>
+<script src="vendors/bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
+<script src="vendors/bower_components/select2/dist/js/select2.full.min.js"></script>
 
-		<script src="vendors/bower_components/salvattore/dist/salvattore.min.js"></script>
-		<script src="vendors/bower_components/flot/jquery.flot.js"></script>
-		<script src="vendors/bower_components/flot/jquery.flot.resize.js"></script>
-		<script src="vendors/bower_components/flot.curvedlines/curvedLines.js"></script>
-		<script src="vendors/bower_components/jqvmap/dist/jquery.vmap.min.js"></script>
-		<script src="vendors/bower_components/jqvmap/dist/maps/jquery.vmap.world.js"></script>
-		<script src="vendors/bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
-		<script src="vendors/bower_components/peity/jquery.peity.min.js"></script>
-		<script src="vendors/bower_components/moment/min/moment.min.js"></script>
-		<script src="vendors/bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
-		<script src="vendors/bower_components/select2/dist/js/select2.full.min.js"></script>
+<!-- Charts and maps-->
+<script src="demo/js/flot-charts/curved-line.js"></script>
+<script src="demo/js/flot-charts/line.js"></script>
+<!-- <script src="demo/js/flot-charts/dynamic.js"></script> -->
+<script src="demo/js/flot-charts/chart-tooltips.js"></script>
+<script src="demo/js/other-charts.js"></script>
+<script src="demo/js/jqvmap.js"></script>
+<script src="js/url.js"></script>
+<!-- App functions and actions -->
+<script src="js/app.min.js"></script>
 
-		<!-- Charts and maps-->
-		<script src="demo/js/flot-charts/curved-line.js"></script>
-		<script src="demo/js/flot-charts/line.js"></script>
-		<!-- <script src="demo/js/flot-charts/dynamic.js"></script> -->
-		<script src="demo/js/flot-charts/chart-tooltips.js"></script>
-		<script src="demo/js/other-charts.js"></script>
-		<script src="demo/js/jqvmap.js"></script>
-		<script src="js/url.js"></script>
-		<!-- App functions and actions -->
-		<script src="js/app.min.js"></script>
+<!-- 自己写的js代码 -->
+<script type="text/javascript">
+    // 当页面加载完毕之后，自动触发查询事件
+    window.onload = function () {
+        $('#select-btn').trigger("click");
+    }
+    // 加载页面头部内容
+    $(".header").load("head.html");
+    // 设置激活菜单
+    window.sessionStorage.removeItem("menu");
+    window.sessionStorage.removeItem("sub-menu");
+    window.sessionStorage.setItem("menu", "admin-menu");
+    window.sessionStorage.setItem("sub-menu", "admin-menu-query");
+    // 加载页面左侧内容
+    $(".sidebar").load("left.html");
 
-		<!-- 自己写的js代码 -->
-		<script type="text/javascript">
-			// 加载页面头部内容
-			$(".header").load("head.html");
-			// 设置激活菜单
-			window.sessionStorage.removeItem("menu");
-			window.sessionStorage.removeItem("sub-menu");
-			window.sessionStorage.setItem("menu", "admin-menu");
-			window.sessionStorage.setItem("sub-menu", "admin-menu-query");
-			// 加载页面左侧内容
-			$(".sidebar").load("left.html");
+    $(function () {
 
-			$(function() {
+        /* 查询按钮的单击事件 */
+        $("#select-btn").click(function () {
+            //查询第一页管理员的信息
+            selectAdminPages(1);
+        });
 
-				/* 查询按钮的单击事件 */
-				$("#select-btn").click(function() {
-					//查询第一页管理员的信息
-					selectAdminPages(1);
-				});
-				/* 查询指定页数的管理员信息 */
-				function selectAdminPages(pageNumber) {
-					// 查找tr并移除
-					var tbody = $("#adminTbody");
-					tbody.find("tr").remove();
-					// 页数大于1 显示分页按钮
-					const pageBtnUl = $("#adminPageBtns");
-					// 移除所有的li
-					pageBtnUl.find("li").remove();
-					// 创建url
-					var url = urlArray[5] + pageNumber;
-					var adminName = $("#admin-name").val();
-					var adminPower = $("#admin-power").val();
-					var data = {
-						adminName,
-						adminPower
-					};
-					$.post(url, data, function(result) {
-						if (result.code == 0) {
-							var list = result.resultData.adminsPage.list;
-							// 获得序号
-							var rowNumber = result.resultData.adminsPage.startRow;
-							for (var i = 0; i < list.length; i++) {
-								var admin = list[i];
-								var tr = $("<tr></tr>");
-								tr.append($("<td>" + (rowNumber + i) + "</td>"));
-								tr.append($("<td>" + admin.adminId + "</td>"));
-								tr.append($(
-									`<td><a class="showAdminModel" href=${admin.adminId} data-toggle="modal" data-target="#updateAdminMessage">${admin.adminName}</a></td>`
-								));
-								tr.append($("<td>" + admin.adminPhone + "</td>"));
-								tr.append($("<td>" + admin.adminEmail + "</td>"));
-								tr.append($("<td>" + (admin.adminPower == 1 ? "超级管理员" : "普通管理员") + "</td>"));
-								// 超级管理员 并且id为1 的masterData 不能修改为禁用状态
-								if (admin.adminId == 1) {
-									tr.append($(
-										`<td><div class="toggle-switch"><input type="checkbox" href="${admin.adminId}" class="toggle-switch__checkbox" checked disabled><i class="toggle-switch__helper"></i></div></td>`
-									));
-								} else {
-									tr.append($("<td>" + (admin.adminState == 1 ?
-										`<div class="toggle-switch"><input type="checkbox" href="${admin.adminId}" class="toggle-switch__checkbox" checked><i class="toggle-switch__helper"></i></div>` :
-										`<div class="toggle-switch"><input type="checkbox" href="${admin.adminId}" class="toggle-switch__checkbox"><i class="toggle-switch__helper"></i></div>`
-									) + "</td>"));
-								}
-								tbody.append(tr);
-							}
-							// 修改启用禁用状态
-							$('.toggle-switch__checkbox').click(function() {
-								// 获取checked 点击之前的状态
-								const adminState = $(this).attr('checked') == "checked" ? 1 : 2;
-								// 后台修改启用禁用状态
-								const data = {
-									adminId: $(this).attr("href"),
-									adminState: adminState == 1 ? 2 : 1
-								}
-								// 发送请求，修改状态
-								$.get(urlArray[6], data)
-								// 修改html中input 的 checked 属性
-								if (adminState == 1) {
-									$(this).attr('checked', false);
-								} else {
-									$(this).attr('checked', true);
-								}
+        /* 查询指定页数的管理员信息 */
+        function selectAdminPages(pageNumber) {
+            $("#adminPage").val(pageNumber);
+            // 查找tr并移除
+            var tbody = $("#adminTbody");
+            tbody.find("tr").remove();
+            // 页数大于1 显示分页按钮
+            const pageBtnUl = $("#adminPageBtns");
+            // 移除所有的li
+            pageBtnUl.find("li").remove();
+            // 创建url
+            var url = urlArray[5] + pageNumber;
+            var adminName = $("#admin-name").val();
+            var adminPower = $("#admin-power").val();
+            var data = {
+                adminName,
+                adminPower
+            };
+            $.post(url, data, function (result) {
+                if (result.code == 0) {
+                    var list = result.resultData.adminsPage.list;
+                    // 获得序号
+                    var rowNumber = result.resultData.adminsPage.startRow;
+                    for (var i = 0; i < list.length; i++) {
+                        var admin = list[i];
+                        var tr = $("<tr></tr>");
+                        tr.append($("<td>" + (rowNumber + i) + "</td>"));
+                        tr.append($("<td>" + admin.adminId + "</td>"));
+                        tr.append($(
+                            `<td><a class="showAdminModel" href=${admin.adminId} data-toggle="modal" data-target="#updateAdminMessage">${admin.adminName}</a></td>`
+                        ));
+                        tr.append($("<td>" + admin.adminPhone + "</td>"));
+                        tr.append($("<td>" + admin.adminEmail + "</td>"));
+                        tr.append($("<td>" + (admin.adminPower == 1 ? "超级管理员" : "普通管理员") + "</td>"));
 
+                        const adminSessionId = JSON.parse(window.sessionStorage.getItem("loginAdmin")).adminId;
+                        const adminSessionPower = JSON.parse(window.sessionStorage.getItem("loginAdmin")).adminPower;
+                        // 如果当前登陆的是超级管理员
+                        if (adminSessionPower == 1) {
+                            // 不能将自己的状态修改为禁用状态 其余都能改
+                            if (admin.adminId == adminSessionId) {
+                                tr.append($(
+                                    `<td><div class="toggle-switch"><input type="checkbox" href="${admin.adminId}" class="toggle-switch__checkbox" checked disabled><i class="toggle-switch__helper"></i></div></td>`
+                                ));
+                            } else {
+                                tr.append($("<td>" + (admin.adminState == 1 ?
+                                        `<div class="toggle-switch"><input type="checkbox" href="${admin.adminId}" class="toggle-switch__checkbox" checked><i class="toggle-switch__helper"></i></div>` :
+                                        `<div class="toggle-switch"><input type="checkbox" href="${admin.adminId}" class="toggle-switch__checkbox"><i class="toggle-switch__helper"></i></div>`
+                                ) + "</td>"));
+                            }
+                        } else {
+                            // 当前是普通管理员
+                            if (admin.adminId == adminSessionId || admin.adminPower == 1) {
+                                tr.append($(
+                                    `<td><div class="toggle-switch"><input type="checkbox" href="${admin.adminId}" class="toggle-switch__checkbox" checked disabled><i class="toggle-switch__helper"></i></div></td>`
+                                ));
+                            } else {
+                                tr.append($("<td>" + (admin.adminState == 1 ?
+                                        `<div class="toggle-switch"><input type="checkbox" href="${admin.adminId}" class="toggle-switch__checkbox" checked><i class="toggle-switch__helper"></i></div>` :
+                                        `<div class="toggle-switch"><input type="checkbox" href="${admin.adminId}" class="toggle-switch__checkbox"><i class="toggle-switch__helper"></i></div>`
+                                ) + "</td>"));
+                            }
 
-							})
-							// 为class为showAdminModel 绑定单击事件
-							$(".showAdminModel").on('click', function() {
-								// 获得href值
-								const adminId = $(this).attr("href");
-								const url = urlArray[7] + adminId;
-								$.post(url, null, result => {
-									if (result.code == 0) {
-										const admin = result.resultData.admin;
-										$("#updateAdminName").val(admin.adminName);
-										$("#updateAdminPhone").val(admin.adminPhone);
-										$("#updateAdminEmail").val(admin.adminEmail);
-										$("#updateAdminId").val(admin.adminId);
-									} else {
-										swal("查询失败！", result.message, "error");
-									}
-								});
-								// 发出请求并获得指定编号管理员信息
-								$("#updateAdminMessage").modal("show");
-								// 显示模态框
-								return false;
+                        }
+                        tbody.append(tr);
+                    }
+                    // 修改启用禁用状态 因为是点击查询之后渲染的 必须写在 $(function(){    }) 里面
+                    $('.toggle-switch__checkbox').on('click', function () {
 
-							})
-							/*  根据总页数是否显示总页数按钮 */
-							//获得内容
-							const page = result.resultData.adminsPage;
-							if (page.pages > 1) {
-								/* 上一页 */
-								const prePage = page.prePage;
-								if (prePage == 0) {
-									// 如果是第一页 设置为disabled  
-									pageBtnUl.append(`<li class="page-item pagination-prev disabled"><a class="page-link" href="#"></a></li>`);
-								} else {
-									pageBtnUl.append(
-										`<li class="page-item pagination-prev"><a class="page-link pageButton" href=${prePage}></a></li>`);
-								}
-								/* 普通分页 */
-								const pageArray = page.navigatepageNums;
-								for (var i = 0; i < pageArray.length; i++) {
-									// 高亮显示
-									if (page.pageNum == (i + 1)) {
-										// 如果是当前页设置为高亮 
-										pageBtnUl.append(
-											`<li class="page-item active"><a class="page-link pageButton" href=${pageArray[i]}>${pageArray[i]}</a></li>`
-										);
-									} else {
-										pageBtnUl.append(
-											`<li class="page-item"><a class="page-link pageButton" href=${pageArray[i]}>${pageArray[i]}</a></li>`);
-									}
-								}
-								/* 下一页 */
-								const isLastPage = page.isLastPage;
-								if (isLastPage) {
-									// 如果是最后一页，设置为disabled
-									pageBtnUl.append(`<li class="page-item pagination-next disabled"><a class="page-link" href="#"></a></li>`);
-								} else {
-									pageBtnUl.append(
-										`<li class="page-item pagination-next"><a class="page-link pageButton" href=${parseInt(pageNumber)+1}></a></li>`
-									);
-								}
-								// 为class 属性为 pageButton 的分页超链接添加单击事件
-								$(".pageButton").on('click', function() {
-									// 获取a链接的页码
-									const temp = $(this).attr("href");
-									$("#adminPage").val(temp);
-									selectAdminPages(temp);
-									// 阻止默认请求
-									return false;
-								})
+                        const adminSessionName = JSON.parse(window.sessionStorage.getItem("loginAdmin")).adminName;
+                        swal({
+                            title: "😊",
+                            text: `确定要修改${adminSessionName}管理员状态么`,
+                            icon: "warning",
+                            buttons: ["取消", "确定"],
+                            dangerMode: false,
+                        }).then((willUpdate) => {
+                            if (willUpdate) {
+                                // 获取checked 点击之前的状态
+                                const adminState = $(this).attr('checked') == "checked" ? 1 : 2;
+                                // 后台修改启用禁用状态
+                                const data = {
+                                    adminId: $(this).attr("href"),
+                                    adminState: adminState == 1 ? 2 : 1
+                                }
+                                // 发送请求，修改状态
+                                $.get(urlArray[6], data);
+                                // 修改html中input 的 checked 属性
+                                if (adminState == 1) {
+                                    $(this).attr('checked', false);
+                                } else {
+                                    $(this).attr('checked', true);
+                                }
+                                ;
+                            } else {
+                                swal(`😊`, `${adminSessionName}:管理员状态未修改!`).then(() => {
+                                    selectAdminPages($("#adminPage").val());
+                                })
+                            }
+                        });
+                    })
+                    // 为class为showAdminModel 绑定单击事件
+                    $(".showAdminModel").on('click', function () {
+                        // 获得href值
+                        const adminId = $(this).attr("href");
+                        const url = urlArray[7] + adminId;
+                        $.post(url, null, result => {
+                            if (result.code == 0) {
+                                const admin = result.resultData.admin;
+                                $("#updateAdminName").val(admin.adminName);
+                                $("#updateAdminPhone").val(admin.adminPhone);
+                                $("#updateAdminEmail").val(admin.adminEmail);
+                                $("#updateAdminId").val(admin.adminId);
+                            } else {
+                                swal("查询失败！", result.message, "error");
+                            }
+                        });
+                        // 发出请求并获得指定编号管理员信息
+                        $("#updateAdminMessage").modal("show");
+                        // 显示模态框
+                        return false;
 
-							}
+                    })
+                    /*  根据总页数是否显示总页数按钮 */
+                    //获得内容
+                    const page = result.resultData.adminsPage;
+                    if (page.pages > 1) {
+                        /* 上一页 */
+                        const prePage = page.prePage;
+                        if (prePage == 0) {
+                            // 如果是第一页 设置为disabled
+                            pageBtnUl.append(`<li class="page-item pagination-prev disabled"><a class="page-link" href="#"></a></li>`);
+                        } else {
+                            pageBtnUl.append(
+                                `<li class="page-item pagination-prev"><a class="page-link pageButton" href=${prePage}></a></li>`);
+                        }
+                        /* 普通分页 */
+                        const pageArray = page.navigatepageNums;
+                        for (var i = 0; i < pageArray.length; i++) {
+                            // 高亮显示
+                            if (page.pageNum == (i + 1)) {
+                                // 如果是当前页设置为高亮
+                                pageBtnUl.append(
+                                    `<li class="page-item active"><a class="page-link pageButton" href=${pageArray[i]}>${pageArray[i]}</a></li>`
+                                );
+                            } else {
+                                pageBtnUl.append(
+                                    `<li class="page-item"><a class="page-link pageButton" href=${pageArray[i]}>${pageArray[i]}</a></li>`);
+                            }
+                        }
+                        /* 下一页 */
+                        const isLastPage = page.isLastPage;
+                        if (isLastPage) {
+                            // 如果是最后一页，设置为disabled
+                            pageBtnUl.append(`<li class="page-item pagination-next disabled"><a class="page-link" href="#"></a></li>`);
+                        } else {
+                            pageBtnUl.append(
+                                `<li class="page-item pagination-next"><a class="page-link pageButton" href=${parseInt(pageNumber) + 1}></a></li>`
+                            );
+                        }
+                        // 为class 属性为 pageButton 的分页超链接添加单击事件
+                        $(".pageButton").on('click', function () {
+                            // 获取a链接的页码
+                            const temp = $(this).attr("href");
+                            selectAdminPages(temp);
+                            // 阻止默认请求
+                            return false;
+                        })
 
-						} else {
-							var tr = $("<tr><td colspan='7'> 没有查询到满足条件的管理员信息！！！</td></tr>");
-							tbody.append(tr);
-						}
-					})
-				};
-				// 设置修改管理员模态框中保存按钮的单击事件
-				$("#updateAdminMsg").click(() => {
-					const data = {
-						adminId: $("#updateAdminId").val(),
-						adminName: $("#updateAdminName").val(),
-						adminPhone: $("#updateAdminPhone").val(),
-						adminEmail: $("#updateAdminEmail").val()
-					};
-					$.post(urlArray[6], data, (result) => {
-						if (result.code == 0) {
-							$("#updateAdminMessage").modal("hide");
-							// 重新查询当前页管理员信息
-							selectAdminPages($("#adminPage").val());
-						} else {
-							swal("修改失败！", result.message, "error");
-						}
-					})
-				})
+                    }
 
-			});
-		</script>
-		<!-- 对于HTML元素本身就带有的固有属性，在处理时，使用prop方法
-		     对于HTML元素我们自己自定义的DOM属性，在处理时，使用attr方法。-->
-	</body>
+                } else {
+                    var tr = $("<tr><td colspan='7'> 没有查询到满足条件的管理员信息！！！</td></tr>");
+                    tbody.append(tr);
+                }
+            })
+        };
+        // 设置修改管理员模态框中保存按钮的单击事件
+        $("#updateAdminMsg").click(() => {
+            const data = {
+                adminId: $("#updateAdminId").val(),
+                adminName: $("#updateAdminName").val(),
+                adminPhone: $("#updateAdminPhone").val(),
+                adminEmail: $("#updateAdminEmail").val()
+            };
+            $.post(urlArray[6], data, (result) => {
+                if (result.code == 0) {
+                    $("#updateAdminMessage").modal("hide");
+                    // 重新查询当前页管理员信息
+                    selectAdminPages($("#adminPage").val());
+                } else {
+                    swal("修改失败！", result.message, "error");
+                }
+            })
+        })
+
+    });
+</script>
+<!-- 对于HTML元素本身就带有的固有属性，在处理时，使用prop方法
+     对于HTML元素我们自己自定义的DOM属性，在处理时，使用attr方法。-->
+</body>
 </html>
