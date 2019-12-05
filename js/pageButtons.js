@@ -1,8 +1,11 @@
-/* 显示分页按钮 
-pageButtonBody:显示分页按钮的容器(ul),
-pageInfo 分页信息
-selectMethod 查询当前页数据的方法  当点击分页的超链接时,需要调用的方法*/
-function showPageButton(pageButtonBody, pageInfo,selectMethod,currentPage) {
+/** 显示分页按钮
+ * pageButtonBody:显示分页按钮的容器(ul),
+ * pageInfo 分页信息
+ * selectMethod 查询当前页数据的方法  当点击分页的超链接时,需要调用的方法
+ */
+function showPageButton(pageButtonBody, pageInfo,selectMethod) {
+    // 查找li 并删除
+    pageButtonBody.find('li').remove();
 	// 判断页面中是否需要显示分页按钮
 	const pages = pageInfo.pages;
 	if (pages <= 1) {

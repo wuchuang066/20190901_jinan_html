@@ -217,7 +217,6 @@
             tempPageNumber = pageNumber;
             // 获得分页元素
             const userPageBody = $("#userPage");
-            userPageBody.find('li').remove();
             const userTbody = $("#userTbody");
             // 移除tr
             userTbody.find('tr').remove();
@@ -286,7 +285,7 @@
                     });
                     const pageData = result.resultData.users;
                     // 在页面中添加分页按钮
-                    showPageButton(userPageBody, pageData, selectUsers, pageNumber);
+                    showPageButton(userPageBody, pageData, selectUsers);
                 } else {
                     const tr = $(`<tr><td colspan="5">没有查询到满足条件的信息！</td></tr>`);
                     userTbody.append(tr);

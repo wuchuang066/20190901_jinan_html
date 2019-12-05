@@ -1,397 +1,526 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<title>XXXX 商城后台管理系统</title>
-		<!-- 导入图标 -->
-		<link href="img/favicon1.ico" rel="icon">
-		<!-- Vendor styles -->
-		<link rel="stylesheet" href="vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css">
-		<link rel="stylesheet" href="vendors/bower_components/animate.css/animate.min.css">
-		<link rel="stylesheet" href="vendors/bower_components/jquery.scrollbar/jquery.scrollbar.css">
-		<link rel="stylesheet" href="vendors/bower_components/fullcalendar/dist/fullcalendar.min.css">
-		<link rel="stylesheet" href="vendors/bower_components/select2/dist/css/select2.min.css">
-		<link rel="stylesheet" type="text/css" href="vendors/bower_components/dropzone/dist/dropzone.css" />
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>XXXX 商城后台管理系统</title>
+    <!-- 导入图标 -->
+    <link href="img/favicon1.ico" rel="icon">
+    <!-- Vendor styles -->
+    <link rel="stylesheet"
+          href="vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="vendors/bower_components/animate.css/animate.min.css">
+    <link rel="stylesheet" href="vendors/bower_components/jquery.scrollbar/jquery.scrollbar.css">
+    <link rel="stylesheet" href="vendors/bower_components/fullcalendar/dist/fullcalendar.min.css">
+    <link rel="stylesheet" href="vendors/bower_components/select2/dist/css/select2.min.css">
+    <!--    <link rel="stylesheet" type="text/css" href="vendors/bower_components/dropzone/dist/dropzone.css"/>-->
+    <link rel="stylesheet" type="text/css" href="css/form.css"/>
 
-		<!-- App styles -->
-		<link rel="stylesheet" href="css/app.min.css">
-	</head>
+    <!-- App styles -->
+    <link rel="stylesheet" href="css/app.min.css">
+</head>
 
-	<body data-sa-theme="1">
-		<main class="main">
-			<div class="page-loader">
-				<div class="page-loader__spinner">
-					<svg viewBox="25 25 50 50">
-						<circle cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
-					</svg>
-				</div>
-			</div>
-			<!-- 页面顶部开始 -->
-			<header class="header">
+<body data-sa-theme="1">
+<main class="main">
+    <div class="page-loader">
+        <div class="page-loader__spinner">
+            <svg viewBox="25 25 50 50">
+                <circle cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+            </svg>
+        </div>
+    </div>
+    <!-- 页面顶部开始 -->
+    <header class="header">
 
-			</header>
-			<!-- 页面顶部结束 -->
-			<!-- 页面左侧代码 start -->
-			<aside class="sidebar">
+    </header>
+    <!-- 页面顶部结束 -->
+    <!-- 页面左侧代码 start -->
+    <aside class="sidebar">
 
-			</aside>
-			<!-- 页面左侧 end -->
-			<!-- 右侧内容开始 -->
-			<section class="content">
-				<nav aria-label="breadcrumb" role="navigation">
-					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="#">商品管理</a></li>
-						<li class="breadcrumb-item active" aria-current="page">查询商品信息</li>
-					</ol>
-				</nav>
-				<!-- <div class="card">
-					<div class="card-body"></div>
-				</div> -->
-				<!-- 查询条件开始 -->
-				<div class="row">
-					<div class="col-lg-2">
-						<input type="text" class="form-control" placeholder="请输入商品名称...">
-						<i class="form-group__bar"></i>
-					</div>
-					<div class="col-lg-2">
-						<input type="text" class="form-control" placeholder="请输入商品最低价...">
-						<i class="form-group__bar"></i>
-					</div>
-					<div class="col-lg-2">
-						<input type="text" class="form-control" placeholder="请输入商品最高价...">
-						<i class="form-group__bar"></i>
-					</div>
-					<div class="col-lg-2">
-						<select name="" class="select2">
-							<option value="">请选择一级类别</option>
-							<option value="123">sda</option>
-							<option value="123">sda</option>
-						</select>
-					</div>
-					<div class="col-lg-2">
-						<select name="" class="select2">
-							<option value="">请选择二级类别</option>
-							<option value="123">sda</option>
-							<option value="123">sda</option>
-						</select>
-					</div>
-					<div class="col-lg-2">
-						<button class="btn btn-light btn--icon-text"><i class="zmdi zmdi-search"></i> Search</button>
-					</div>
-				</div>
-				<!-- 查询条件结束 -->
-				<hr>
-				<!-- 查询结果开始 -->
-				<div class="row">
-					<div class="col-xs-2 col-lg-3 col-sm-4 col-6">
-						<div class="contacts__item">
-							<!-- picture start -->
-							<a href="#"><img src="demo/img/widgets/note.jpg" style="width:100%"></a>
-							<!-- picture end -->
-							<div class="contacts__info" style="margin-top: 5px;">
-								<strong>XXXXX</strong>
-								<p>
-									<span id="" style="text-decoration: line-through;">
-										￥ 999.00
-									</span>
-									&nbsp;
-									<span id="">
-										￥ 888.00
-									</span>
-								</p>
-							</div>
-							<!-- 热卖 新品 上架 -->
-							<a href="#"> 热卖</a>
-							<a href="#"> 新品</a>
-							<a href="#"> 上架</a>
-							<a href="#" class="imageModal"> 修改图片</a>
-						</div>
-					</div>
-					<div class="col-xs-2 col-lg-3 col-sm-4 col-6">
-						<div class="contacts__item">
-							<!-- picture start -->
-							<a href="#"><img src="demo/img/widgets/note.jpg" style="width:100%"></a>
-							<!-- picture end -->
-							<div class="contacts__info" style="margin-top: 5px;">
-								<strong>XXXXX</strong>
-								<p>
-									<span id="" style="text-decoration: line-through;">
-										￥ 999.00
-									</span>
-									&nbsp;
-									<span id="">
-										￥ 888.00
-									</span>
-								</p>
-							</div>
-							<!-- 热卖 新品 上架 -->
-							<a href="#"> 热卖</a>
-							<a href="#"> 新品</a>
-							<a href="#"> 上架</a>
-							<a href="#" class="imageModal"> 修改图片</a>
-						</div>
-					</div>
-					<div class="col-xs-2 col-lg-3 col-sm-4 col-6">
-						<div class="contacts__item">
-							<!-- picture start -->
-							<a href="#"><img src="demo/img/widgets/note.jpg" style="width:100%"></a>
-							<!-- picture end -->
-							<div class="contacts__info" style="margin-top: 5px;">
-								<strong>XXXXX</strong>
-								<p>
-									<span id="" style="text-decoration: line-through;">
-										￥ 999.00
-									</span>
-									&nbsp;
-									<span id="">
-										￥ 888.00
-									</span>
-								</p>
-							</div>
-							<!-- 热卖 新品 上架 -->
-							<a href="#"> 热卖</a>
-							<a href="#"> 新品</a>
-							<a href="#"> 上架</a>
-							<a href="#" class="imageModal"> 修改图片</a>
-						</div>
-					</div>
-					<div class="col-xs-2 col-lg-3 col-sm-4 col-6">
-						<div class="contacts__item">
-							<!-- picture start -->
-							<a href="#"><img src="demo/img/widgets/note.jpg" style="width:100%"></a>
-							<!-- picture end -->
-							<div class="contacts__info" style="margin-top: 5px;">
-								<strong>XXXXX</strong>
-								<p>
-									<span id="" style="text-decoration: line-through;">
-										￥ 999.00
-									</span>
-									&nbsp;
-									<span id="">
-										￥ 888.00
-									</span>
-								</p>
-							</div>
-							<!-- 热卖 新品 上架 -->
-							<a href="#"> 热卖</a>
-							<a href="#"> 新品</a>
-							<a href="#"> 上架</a>
-							<a href="#" class="imageModal"> 修改图片</a>
-						</div>
-					</div>
-					<div class="col-xs-2 col-lg-3 col-sm-4 col-6">
-						<div class="contacts__item">
-							<!-- picture start -->
-							<a href="#"><img src="demo/img/widgets/note.jpg" style="width:100%"></a>
-							<!-- picture end -->
-							<div class="contacts__info" style="margin-top: 5px;">
-								<strong>XXXXX</strong>
-								<p>
-									<span id="" style="text-decoration: line-through;">
-										￥ 999.00
-										&nbsp;
-									</span>
-									<span id="">
-										￥ 888.00
-									</span>
-								</p>
-							</div>
-							<!-- 热卖 新品 上架 -->
-							<a href="#"> 热卖</a>
-							<a href="#"> 新品</a>
-							<a href="#"> 上架</a>
-							<a href="#" class="imageModal"> 修改图片</a>
-						</div>
-					</div>
-					<div class="col-xs-2 col-lg-3 col-sm-4 col-6">
-						<div class="contacts__item">
-							<!-- picture start -->
-							<a href="#"><img src="demo/img/widgets/note.jpg" style="width:100%"></a>
-							<!-- picture end -->
-							<div class="contacts__info" style="margin-top: 5px;">
-								<strong>XXXXX</strong>
-								<p>
-									<span id="" style="text-decoration: line-through;">
-										￥ 999.00
-									</span>
-									&nbsp;
-									<span id="">
-										￥ 888.00
-									</span>
-								</p>
-							</div>
-							<!-- 热卖 新品 上架 -->
-							<a href="#"> 热卖</a>
-							<a href="#"> 新品</a>
-							<a href="#"> 上架</a>
-							<a href="#"> 修改图片</a>
-						</div>
-					</div>
-					<div class="col-xs-2 col-lg-3 col-sm-4 col-6">
-						<div class="contacts__item">
-							<!-- picture start -->
-							<a href="#"><img src="demo/img/widgets/note.jpg" style="width:100%"></a>
-							<!-- picture end -->
-							<div class="contacts__info" style="margin-top: 5px;">
-								<strong>XXXXX</strong>
-								<p>
-									<span id="" style="text-decoration: line-through;">
-										￥ 999.00
-									</span>
-									&nbsp;
-									<span id="">
-										￥ 888.00
-									</span>
-								</p>
-							</div>
-							<!-- 热卖 新品 上架 -->
-							<a href="#"> 热卖</a>
-							<a href="#"> 新品</a>
-							<a href="#"> 上架</a>
-							<a href="#"> 修改图片</a>
-						</div>
-					</div>
-					<div class="col-xs-2 col-lg-3 col-sm-4 col-6">
-						<div class="contacts__item">
-							<!-- picture start -->
-							<a href="#" data-toggle="modal" data-target="#updateGoodsMessage"><img src="demo/img/widgets/note.jpg" style="width:100%"></a>
-							<!-- picture end -->
-							<div class="contacts__info" style="margin-top: 5px;">
-								<strong>XXXXX</strong>
-								<p>
-									<span id="" style="text-decoration: line-through;">
-										￥ 999.00
-									</span>
-									&nbsp;
-									<span id="">
-										￥ 888.00
-									</span>
-								</p>
-							</div>
-							<!-- 热卖 新品 上架 -->
-							<a href="#"> 热卖</a>
-							<a href="#"> 新品</a>
-							<a href="#"> 上架</a>
-							<a href="#"> 修改图片</a>
-						</div>
-					</div>
-				</div>
-				<!-- 查询结果结束 -->
+    </aside>
+    <!-- 页面左侧 end -->
+    <!-- 右侧内容开始 -->
+    <section class="content">
+        <nav aria-label="breadcrumb" role="navigation">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">商品管理</a></li>
+                <li class="breadcrumb-item active" aria-current="page">查询商品信息</li>
+            </ol>
+        </nav>
+        <!-- <div class="card">
+            <div class="card-body"></div>
+        </div> -->
+        <!-- 查询条件开始 -->
+        <div class="row">
+            <div class="col-lg-2">
+                <input type="text" id="queryGoodsName" class="form-control" placeholder="请输入商品名称...">
+                <i class="form-group__bar"></i>
+            </div>
+            <div class="col-lg-2">
+                <input type="text" id="selectGoodsPriceMin" class="form-control" placeholder="请输入商品最低价...">
+                <i class="form-group__bar"></i>
+            </div>
+            <div class="col-lg-2">
+                <input type="text" id="selectGoodsPriceMax" class="form-control" placeholder="请输入商品最高价...">
+                <i class="form-group__bar"></i>
+            </div>
+            <div class="col-lg-2">
+                <select name="" class="select2" id="receivers">
+                    <option value="0">请选择一级类别</option>
+                    <!--                    <option value="123">sda</option>-->
+                    <!--                    <option value="123">sda</option>-->
+                </select>
+            </div>
+            <div class="col-lg-2">
+                <select name="" class="select2" id="levels">
+                    <option value="0">请选择二级类别</option>
+                    <!--                    <option value="123">sda</option>-->
+                    <!--                    <option value="123">sda</option>-->
+                </select>
+            </div>
+            <div class="col-lg-2">
+                <button class="btn btn-light btn--icon-text" id="selectBtn"><i class="zmdi zmdi-search"></i> Search
+                </button>
+            </div>
+        </div>
+        <!-- 查询条件结束 -->
+        <hr>
+        <!-- 查询结果开始 -->
+        <div class="row" id="goodsMsgDiv">
+            <!--            <div class="col-xs-2 col-lg-3 col-sm-4 col-6">-->
+            <!--                <div class="contacts__item">-->
+            <!--                    &lt;!&ndash; picture start &ndash;&gt;-->
+            <!--                    <a href="#"><img src="demo/img/widgets/note.jpg" style="width:100%"></a>-->
+            <!--                    &lt;!&ndash; picture end &ndash;&gt;-->
+            <!--                    <div class="contacts__info" style="margin-top: 5px;">-->
+            <!--                        <strong>XXXXX</strong>-->
+            <!--                        <p>-->
+            <!--									<span style="text-decoration: line-through;">-->
+            <!--										￥ 999.00-->
+            <!--									</span>-->
+            <!--                            &nbsp;-->
+            <!--                            <span>-->
+            <!--										￥ 888.00-->
+            <!--									</span>-->
+            <!--                        </p>-->
+            <!--                    </div>-->
+            <!--                    &lt;!&ndash; 热卖 新品 上架 &ndash;&gt;-->
+            <!--                    <a href="#"> 热卖</a>-->
+            <!--                    <a href="#"> 新品</a>-->
+            <!--                    <a href="#"> 上架</a>-->
+            <!--                    <a href="#" class="imageModal"> 修改图片</a>-->
+            <!--                </div>-->
+            <!--            </div>-->
+        </div>
+        <!-- 查询结果结束 -->
 
-				<!-- 分页开始 -->
-				<nav>
-					<ul class="pagination justify-content-center">
-						<li class="page-item pagination-prev"><a class="page-link" href="#"></a></li>
-						<li class="page-item"><a class="page-link" href="#">1</a></li>
-						<li class="page-item"><a class="page-link" href="#">2</a></li>
-						<li class="page-item"><a class="page-link" href="#">3</a></li>
-						<li class="page-item"><a class="page-link" href="#">4</a></li>
-						<li class="page-item"><a class="page-link" href="#">5</a></li>
-						<li class="page-item"><a class="page-link" href="#">6</a></li>
-						<li class="page-item pagination-next"><a class="page-link" href="#"></a></li>
-					</ul>
-				</nav>
-				<!-- 分页结束 -->
-			</section>
-			<!-- 右侧内容结束 -->
+        <!-- 分页开始 -->
+        <nav>
+            <ul class="pagination justify-content-center" id="goodsPageBtns">
+            </ul>
+        </nav>
+        <!-- 分页结束 -->
+    </section>
+    <!-- 右侧内容结束 -->
 
-		</main>
-		<!-- 模态框 修改图片-->
-		<div class="modal fade" id="updateGoodsPic" tabindex="-1">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<!-- 模态框顶部 -->
-					<div class="modal-header">
-						<h5 class="modal-title pull-left">修改图片</h5>
-					</div>
-					<!-- 模态框中间部分 -->
-					<div class="modal-body">
-						<!-- <div class="form-group  col-lg-12"> -->
-						<form class="dropzone" id="dropzone-upload">
-							<div class="dz-default dz-message"><span>点击上传</span></div>
-						</form>
-						<!-- </div> -->
-					</div>
+</main>
+<!-- 修改商品图片模态框开始 -->
+<div class="modal fade" id="updateGoodsImageModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- 模态框顶部 -->
+            <div class="modal-header">
+                <h5 class="modal-title pull-left">编辑商品图片</h5>
+            </div>
+            <!--模态框中部开始-->
+            <div class="modal-body">
+                <!--保存修改商品的编号-->
+                <input type="hidden" id="updateModalGoodsImageId">
+                <!--保存商品原名称-->
+                <input type="hidden" id="uploadOldFileName">
+                <!-- 图片浏览上传控件 -->
+                <form method="post" id="updateGoodsImageForm" enctype="multipart/form-data">
+                    <div class="fileupload fileupload-exists row" data-provides="fileupload">
+                        <div style="width:auto" id="temp"
+                             class="fileupload-preview thumbnail form-control col-lg-12 col-sm-12"></div>
+                        <div>
+							<span class="btn btn-file btn-alt btn-light">
+								<span class="fileupload-new">选择图片</span>
+								<span class="fileupload-exists">选择</span>
+								<input type="file" id="goodsImage" name="myFile"/>
+							</span>
+                            <a href="#" class="btn fileupload-exists btn-light" data-dismiss="fileupload">移除</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!--模态框中部结束-->
 
-					<!-- 模态框底部 -->
-					<div class="modal-footer">
-						<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- 模态框 end -->
-		<!-- 模态框 修改商品信息-->
-		<div class="modal fade" id="updateGoodsMessage" tabindex="-1">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<!-- 模态框顶部 -->
-					<div class="modal-header">
-						<h5 class="modal-title pull-left">编辑商品信息</h5>
-					</div>
-					<!-- 模态框中间部分 -->
-					<div class="modal-body">
-						商品信息
-					</div>
-					<!-- 模态框底部 -->
-					<div class="modal-footer">
-						<button type="button" class="btn btn-link" data-dismiss="modal">Save</button>
-						<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- 模态框 end -->
-		<!-- Javascript -->
-		<!-- Vendors -->
-		<script src="js/jquery-1.10.2.js"></script>
-		<script src="vendors/bower_components/popper.js/dist/umd/popper.min.js"></script>
-		<script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-		<script src="vendors/bower_components/jquery.scrollbar/jquery.scrollbar.min.js"></script>
-		<script src="vendors/bower_components/jquery-scrollLock/jquery-scrollLock.min.js"></script>
+            <!--模态框底部开始-->
+            <div class="modal-footer" style="margin-top: 0px;">
+                <button type="button" class="btn btn-light" id="updateGoodsImageBtn">修改</button>
+                <button type="button" class="btn btn-light" data-dismiss="modal">关闭</button>
+            </div>
+            <!--模态框底部结束-->
+        </div>
+    </div>
+</div>
+<!-- 修改商品图片模态框结束 -->
 
-		<script src="vendors/bower_components/salvattore/dist/salvattore.min.js"></script>
-		<script src="vendors/bower_components/flot/jquery.flot.js"></script>
-		<script src="vendors/bower_components/flot/jquery.flot.resize.js"></script>
-		<script src="vendors/bower_components/flot.curvedlines/curvedLines.js"></script>
-		<script src="vendors/bower_components/jqvmap/dist/jquery.vmap.min.js"></script>
-		<script src="vendors/bower_components/jqvmap/dist/maps/jquery.vmap.world.js"></script>
-		<script src="vendors/bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
-		<script src="vendors/bower_components/peity/jquery.peity.min.js"></script>
-		<script src="vendors/bower_components/moment/min/moment.min.js"></script>
-		<script src="vendors/bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
-		<script src="vendors/bower_components/select2/dist/js/select2.full.min.js"></script>
-		<script src="vendors/bower_components/dropzone/dist/min/dropzone.min.js"></script>
 
-		<!-- Charts and maps-->
-		<script src="demo/js/flot-charts/curved-line.js"></script>
-		<script src="demo/js/flot-charts/line.js"></script>
-		<!-- <script src="demo/js/flot-charts/dynamic.js"></script> -->
-		<script src="demo/js/flot-charts/chart-tooltips.js"></script>
-		<script src="demo/js/other-charts.js"></script>
-		<script src="demo/js/jqvmap.js"></script>
-		<script src="js/url.js"></script>
-		<!-- App functions and actions -->
-		<script src="js/app.min.js"></script>
+<!-- 模态框 修改商品信息-->
+<div class="modal fade" id="updateGoodsMessage" tabindex="-1">
+    <div class="modal-dialog ">
+        <div class="modal-content">
+            <!-- 模态框顶部 -->
+            <div class="modal-header">
+                <h5 class="modal-title pull-left">编辑商品信息</h5>
+            </div>
+            <!-- 模态框中间部分 -->
+            <div class="modal-body">
+                <!--保存修改商品的编号-->
+                <input type="hidden" id="updateGoodsId">
+                <div class="row">
+                    <div class="col-2-offset-2 text-right" style="padding-top: 15px">商品名称:</div>
+                    <div class="col-10"><input type="text" id="updateModalGoodsName" class="form-control"></div>
+                </div>
 
-		<!-- 自己写的js代码 -->
-		<script type="text/javascript">
-			// 加载页面头部内容
-			$(".header").load("head.html");
-			// 设置激活菜单
-			window.sessionStorage.removeItem("menu");
-			window.sessionStorage.removeItem("sub-menu");
-			window.sessionStorage.setItem("menu", "goods-menu");
-			window.sessionStorage.setItem("sub-menu", "goods-menu-query");
-			// 加载页面左侧内容
-			$(".sidebar").load("left.html");
-			$(function() {
-				$(".imageModal").click(function() {
-					$("#updateGoodsPic").modal("show");
-					return false;
-				})
-			});
-		</script>
-	</body>
+                <div class="row">
+                    <div class="col-2-offset-2 text-right" style="padding-top: 15px">商品价格:</div>
+                    <div class="col-10"><input type="text" id="updateModalGoodsPrice" class="form-control"></div>
+                </div>
+                <div class="row">
+                    <div class="col-2-offset-2 text-right" style="padding-top: 15px">商品折扣:</div>
+                    <div class="col-10"><input type="text" id="updateModalGoodsDiscount" class="form-control"></div>
+                </div>
+                <div class="row">
+                    <div class="col-2-offset-2 text-right" style="padding-top: 15px">库存状态:</div>
+                    <div class="col-10"><select class="form-control" id="updateGoodsStuck"
+                                                style="background-color: #0D0A0A">
+                        <option value="1">有货</option>
+                        <option value="2">缺货</option>
+                    </select></div>
+                </div>
+                <div class="row">
+                    <div class="col-2-offset-2 text-right" style="padding-top: 15px">一级类别:</div>
+                    <div class="col-10"><select class="form-control" id="updateGoodsReceiver"
+                                                style="background-color: #0D0A0A">
+                    </select></div>
+                </div>
+                <div class="row">
+                    <div class="col-2-offset-2 text-right" style="padding-top: 15px">二级类别:</div>
+                    <div class="col-10"><select class="form-control" id="updateGoodsLevel"
+                                                style="background-color: #0D0A0A">
+                    </select></div>
+                </div>
+                <div class="row">
+                    <div class="col-2-offset-2 text-right" style="padding-top: 15px">商品简介:</div>
+                    <div class="col-10"><textarea type="" rows="3" class="form-control" id="goodsBrief"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-2-offset-2 text-right" style="padding-top: 15px">商品详情:</div>
+                    <div class="col-10"><textarea type="" rows="6" class="form-control"
+                                                  id="goodsIntroduction"></textarea></div>
+                </div>
+
+            </div>
+            <!-- 模态框底部 -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-link" data-dismiss="modal" id="updateModalGoods">Save</button>
+                <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 模态框 end -->
+<!-- Javascript -->
+<!-- Vendors -->
+<script src="js/jquery-1.10.2.js"></script>
+<script src="vendors/bower_components/popper.js/dist/umd/popper.min.js"></script>
+<script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="vendors/bower_components/jquery.scrollbar/jquery.scrollbar.min.js"></script>
+<script src="vendors/bower_components/jquery-scrollLock/jquery-scrollLock.min.js"></script>
+
+<script src="vendors/bower_components/salvattore/dist/salvattore.min.js"></script>
+<script src="vendors/bower_components/flot/jquery.flot.js"></script>
+<script src="vendors/bower_components/flot/jquery.flot.resize.js"></script>
+<script src="vendors/bower_components/flot.curvedlines/curvedLines.js"></script>
+<script src="vendors/bower_components/jqvmap/dist/jquery.vmap.min.js"></script>
+<script src="vendors/bower_components/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+<script src="vendors/bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
+<script src="vendors/bower_components/peity/jquery.peity.min.js"></script>
+<script src="vendors/bower_components/moment/min/moment.min.js"></script>
+<script src="vendors/bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
+<script src="vendors/bower_components/select2/dist/js/select2.full.min.js"></script>
+<!--<script src="vendors/bower_components/dropzone/dist/min/dropzone.min.js"></script>-->
+
+<script src="js/fileupload.min.js"></script>
+<!-- Charts and maps-->
+<script src="demo/js/flot-charts/curved-line.js"></script>
+<script src="demo/js/flot-charts/line.js"></script>
+<!-- <script src="demo/js/flot-charts/dynamic.js"></script> -->
+<script src="demo/js/flot-charts/chart-tooltips.js"></script>
+<script src="demo/js/other-charts.js"></script>
+<script src="demo/js/jqvmap.js"></script>
+<script src="js/url.js"></script>
+<!-- App functions and actions -->
+<script src="js/app.min.js"></script>
+<!-- 下拉列表js -->
+<script src="js/spinner.js"></script>
+<!-- 商品名称js -->
+<script src="js/common.js"></script>
+<!-- 导入分页按钮-->
+<script src="js/pageButtons.js"></script>
+<!-- 自己写的js代码 -->
+<script type="text/javascript">
+    // 当页面加载完毕之后，自动触发查询事件
+    window.onload = () => {
+        $('#selectBtn').trigger("click");
+    }
+    // 加载页面头部内容
+    $(".header").load("head.html");
+    // 设置激活菜单
+    window.sessionStorage.removeItem("menu");
+    window.sessionStorage.removeItem("sub-menu");
+    window.sessionStorage.setItem("menu", "goods-menu");
+    window.sessionStorage.setItem("sub-menu", "goods-menu-query");
+    // 加载页面左侧内容
+    $(".sidebar").load("left.html");
+    $(function () {
+        // 声明页数临时变量
+        let tempPageNumber = 1;
+        // 添加一级下拉菜单
+        addReceiverSpinner($("#receivers"));
+        // 添加模态框一级下拉菜单
+        addReceiverSpinner($("#updateGoodsReceiver"));
+        // 设置一级类别的change事件，当控件中数据发生改变并失去焦点时会触发
+        $("#receivers").change(function () {
+            addLevel($(this), $("#levels"), null);
+        });
+        /*修改模态框中商品信息*/
+        $("#updateModalGoods").click(function () {
+            //验证修改后的商品信息是否正确
+            //设置修改商品的参数
+            const args = {
+                goodsId: $("#updateGoodsId").val(),
+                goodsName: $("#updateModalGoodsName").val(),
+                goodsPrice: $("#updateModalGoodsPrice").val(),
+                goodsDiscount: $("#updateModalGoodsDiscount").val(),
+                goodsBrief: $("#goodsBrief").val(),
+                goodsIntroduction: $("#goodsIntroduction").val(),
+                levelId: $("#updateGoodsLevel").val(),
+                goodsStock: $("#updateGoodsStuck").val()
+            };
+            updateGoods(args);
+            // 隐藏模态框
+            $("#updateGoodsMessage").modal("hide");
+        })
+        // 设置id为updateGoodsImageBtn 的单击事件
+        $("#updateGoodsImageBtn").click(function () {
+            let formData = new FormData($("#updateGoodsImageForm")[0]);
+            $.ajax({
+                url: urlArray[13],
+                type: "post",
+                dataType: "json",
+                cache: false,
+                data: formData,
+                processData: false, //不处理数据
+                contentType: false, //不设置内容类型
+                success: function (result) {
+                    //图片上传成功
+                    let goodsImg;
+                    if (result.code == 0) {
+                        goodsImg = result.resultData.fileName + result.resultData.extension;
+                        // 修改商品的图片信息
+                        // 从隐藏表单域中获得商品的编号 后期维护可以用es6 的Promise
+                        const goodsId = $("#updateModalGoodsImageId").val();
+                        // 删除原来的图片
+                        const fileName = $("#uploadOldFileName").val();
+                        const args = {
+                            fileName
+                        };
+                        $.get(urlArray[14], args, null);
+
+                        // 修改商品的参数
+                        const data = {
+                            goodsId,
+                            goodsImage: "upload-images/goods-images/" + goodsImg
+                        }
+                        updateGoods(data);
+                        // 关闭模态框
+                        $("#updateGoodsImageModal").modal("hide");
+                    }
+                }
+            });
+        });
+        $("#selectBtn").click(function () {
+            selectGoods(tempPageNumber);
+        });
+
+        function selectGoods(pageNumber) {
+            tempPageNumber = pageNumber;
+            const url = urlArray[11] + pageNumber;
+            const data = {
+                goodsName: $("#queryGoodsName").val(),
+                priceMin: $("#selectGoodsPriceMin").val(),
+                priceMax: $("#selectGoodsPriceMax").val(),
+                receiverId: $("#receivers").val(),
+                levelId: $("#levels").val()
+            };
+            $.post(url, data, (result) => {
+                if (result.code == 0) {
+                    const goodsMsgDiv = $("#goodsMsgDiv");
+                    goodsMsgDiv.find('div').remove();
+                    // 获得分页的信息
+                    const pages = result.resultData.goodsListPages;
+                    const count = pages.size;
+                    const goodsList = pages.list;// 商品的信息
+                    // 获得分页按钮容器
+                    const goodsPageBtns = $("#goodsPageBtns");
+                    showPageButton(goodsPageBtns, pages, selectGoods);
+                    for (let i = 0; i < count; i++) {
+                        // 创建商品信息最外层的div
+                        const div1 = $('<div class="col-xs-2 col-lg-3 col-sm-4 col-6" ></div>');
+                        const div2 = $('<div class="contacts__item"></div>');
+
+                        //创建商品图片节点
+                        const goods = goodsList[i];
+                        const goodsImage = $(`<a href="${goods.goodsId}" class="imageModal" title="${goods.goodsImage}"><img src="${goods.goodsImage}" style="width:100%; height: 240px"/></a>`);
+                        div2.append(goodsImage);
+                        const goodsJson = JSON.stringify(goods);
+                        // 创建节点 商品名称，价格，折扣价的div
+                        const rename1 = rename(goods.goodsName, 13);
+                        const div3 = $(`<div class="contacts__info" style="margin-top: 5px;"></div>`);
+                        const goodsName = $("<a href='"+goodsJson+"' class='goodsModalMessage'><strong title='"+goods.goodsName+"'>"+rename1+"</strong></a>");
+                        // 使用反引号 取值 空格会出现问题 所以这里不使用反引号
+                        // const goodsName = $(`<a href=${goodsJson} class='goodsModalMessage'><strong title='${goods.goodsName}'>${rename1}</strong></a>`);
+                        div3.append(goodsName);
+                        div2.append(div3);
+                        // 创建节点   保存商品的 价格和折扣价
+                        const p = $(` <p></p>`);
+                        // 判断商品是否有折扣价
+                        if (goods.goodsDiscount != 0) {
+                            // 有折扣价
+                            const goodsPrice = $(`<span style="text-decoration: line-through;">￥${formatNumber(goods.goodsPrice)}</span>`);
+                            const goodsDiscount = $(`<span ">￥${formatNumber(goods.goodsDiscount)}</span>`);
+                            // 插入到段落中
+                            p.append(goodsPrice);
+                            p.append(goodsDiscount);
+                            // 将段落插入到内层的div中
+                            div3.append(p);
+                        } else {
+                            const goodsPrice = $(`<span >￥${formatNumber(goods.goodsPrice)}</span>`);
+                            // 插入到段落中
+                            p.append(goodsPrice);
+                            // 将段落插入到内层的div中
+                            div3.append(p);
+                        }
+
+                        // 将内层div插入到外层div 里面
+                        div1.append(div2);
+                        //创建节点   热卖
+                        const goodsHot = $(`<a href="${goods.goodsId}" class="goodsHref" state1="${goods.goodsHot}"> ${goods.goodsHot == 1 ? "热卖" : "非热卖"}</a>`);
+                        div2.append(goodsHot);
+                        const goodsNew = $(`<a href="${goods.goodsId}" class="goodsHref" state2="${goods.goodsNew}"> ${goods.goodsNew == 1 ? "新品" : "非新品"}</a>`);
+                        div2.append(goodsNew);
+                        const goodsUperself = $(`<a href="${goods.goodsId}" class="goodsHref" state3="${goods.goodsUpershelf}">  ${goods.goodsUpershelf == 1 ? "上架" : "下架"}</a>`);
+                        div2.append(goodsUperself);
+                        // 将外层的div插入到显示商品的div中
+                        goodsMsgDiv.append(div1);
+                    }
+                    /**
+                     *  单击显示商品模态框
+                     */
+                    $(".goodsModalMessage").on('click', function () {
+                        //显示模态框中商品信息
+                        const temp = $(this).attr("href");
+                        const goodsModalMsg = JSON.parse($(this).attr("href"));
+                        $("#updateModalGoodsName").val(goodsModalMsg.goodsName);
+                        $("#updateModalGoodsPrice").val(goodsModalMsg.goodsPrice);
+                        $("#updateModalGoodsDiscount").val(goodsModalMsg.goodsDiscount);
+                        $("#goodsBrief").val(goodsModalMsg.goodsBrief);
+                        $("#goodsIntroduction").val(goodsModalMsg.goodsIntroduction);
+                        $("#updateGoodsReceiver").val(goodsModalMsg.receiverId);
+                        $("#updateGoodsStuck").val(goodsModalMsg.goodsStock);
+                        addLevel($("#updateGoodsReceiver"), $("#updateGoodsLevel"), goodsModalMsg.levelId);
+                        $("#updateGoodsId").val(goodsModalMsg.goodsId);
+                        $("#updateGoodsMessage").modal('show');
+                        return false;
+                    });
+
+                    /**
+                     *  为class属性为imageModal设置单击事件
+                     */
+                    $(".imageModal").on('click', function () {
+                        // 获得商品的编号
+                        const goodsId = $(this).attr("href");
+                        $("#updateModalGoodsImageId").val(goodsId);
+                        // 首先移除img 元素
+                        const temp = $("#temp");
+                        temp.find("img").remove();
+                        // 显示商品的原图片
+                        const oldImgPath = $(this).attr("title");
+                        // 创建节点 显示商品原图片
+                        const preImg = $(`<img src="${oldImgPath}"/>`);
+                        temp.append(preImg);
+                        $("#updateGoodsImageModal").modal("show");
+                        // 删除图片 获得商品的名称
+                        const index = oldImgPath.lastIndexOf("/");
+                        const fileName = oldImgPath.substr(index + 1);
+                        // 将原图片名称 放在隐藏表单域中
+                        $("#uploadOldFileName").val(fileName);
+                        return false;
+                    });
+                    // 设置class属性为goodsHref的单击事件
+                    $(".goodsHref").on('click', function () {
+                        const goodsId = $(this).attr("href");
+                        //获得文字
+                        const txt = $(this).text().trim();
+                        let goodsHot = $(this).attr("state1");
+                        let goodsNew = $(this).attr("state2");
+                        let goodsUpershelf = $(this).attr("state3");
+                        switch (txt) {
+                            case '热卖':
+                            case '非热卖':
+                                goodsHot = $(this).attr("state1") == 1 ? 2 : 1;
+                                break;
+                            case '新品':
+                            case '非新品':
+                                goodsNew = $(this).attr("state2") == 1 ? 2 : 1;
+                                break;
+                            case '上架':
+                            case '下架':
+                                goodsUpershelf = $(this).attr("state3") == 1 ? 2 : 1;
+                                break;
+                        }
+                        // 根据超链接中用户不能修改的值 修改状态
+                        const data = {
+                            goodsId,
+                            goodsHot,
+                            goodsNew,
+                            goodsUpershelf
+                        };
+                        // 修改商品信息
+                        updateGoods(data);
+                        return false;
+                    });
+                } else {
+                    swal("", "查询失败！", "error");
+                }
+            });
+        }
+
+        /**
+         * 根据传入的参数修改商品的状态
+         * @param args
+         */
+        function updateGoods(args) {
+            $.post(urlArray[12], args, function (result) {
+                if (result.code == 0) selectGoods(tempPageNumber);
+            })
+        }
+    });
+</script>
+</body>
 </html>

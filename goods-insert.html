@@ -19,10 +19,19 @@
     <link rel="stylesheet" href="css/app.min.css">
     <style type="text/css">
         #errorPrice,
-        #errorPrice2 {
+        #errorPrice2,
+        #errorName,
+        #errorLevels,
+        #errorReceivers {
             color: red;
             font-size: 12px;
         }
+        .sweetAlert {
+             width: 260px;
+             margin: 0 auto;
+             left: 0;
+             right: 0;
+         }
     </style>
 </head>
 
@@ -63,13 +72,15 @@
                         <input type="text" autocomplete="off" id="goodsName" class="form-control form-control-sm"
                                placeholder="请输入商品名称..."
                                autofocus="autofocus" style="padding-top: 10px;">
+                        <span id="errorName">
+								</span>
                     </div>
                     <div class="form-group col-lg-6">
                         <label>热卖商品：</label>
                         <!-- 获得焦点 -->
-                        <select name="" class="select2">
+                        <select name="" class="select2" id="addGoodsHot">
                             <option value="1">热卖商品</option>
-                            <option value="0">非热卖商品</option>
+                            <option value="2">非热卖商品</option>
                         </select>
                     </div>
                 </div>
@@ -96,15 +107,17 @@
 
                 <div class="row">
                     <div class="form-group col-lg-6">
-                        <label>热卖：</label>
-                        <select class="select2">
-                            <option value="">热卖</option>
+                        <label>上架商品：</label>
+                        <select class="select2" id="addGoodsUpershelf">
+                            <option value="1">上架</option>
+                            <option value="2">下架</option>
                         </select>
                     </div>
                     <div class="form-group col-lg-6">
                         <label>新品：</label>
-                        <select class="select2">
-                            <option value="">新品</option>
+                        <select class="select2" id="addGoodsNew">
+                            <option value="1">新品</option>
+                            <option value="2">非新品</option>
                         </select>
                     </div>
                 </div>
@@ -112,25 +125,30 @@
                     <div class="form-group col-lg-6">
                         <label>类别：</label>
                         <select class="select2" id="receivers">
-                            <option value="">一级类别</option>
+                            <option value="0">请选择一级类别</option>
                         </select>
+                        <span id="errorReceivers">
+								</span>
                     </div>
                     <div class="form-group col-lg-6">
-                        <label for="">类别：</label>
+                        <label>类别：</label>
                         <select class="select2" id="levels">
-                            <option value="">二级类别</option>
+                            <option value="0">请选择二级类别</option>
                         </select>
+                        <span id="errorLevels">
+								</span>
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-lg-6">
-                        <label for="">库存状态：</label>
-                        <select class="select2">
-                            <option value="">有货</option>
+                        <label>库存状态：</label>
+                        <select class="select2" id="addGoodsStock">
+                            <option value="1">有货</option>
+                            <option value="2">缺货</option>
                         </select>
                     </div>
                     <div class="form-group col-lg-6">
-                        <label for="">商品简介：</label>
+                        <label>商品简介：</label>
                         <input type="text" autocomplete="off" id="goodsDesc" class="form-control form-control-sm"
                                placeholder="请输入商品简介..."
                                style="padding-top: 10px;"/>
@@ -138,14 +156,16 @@
                 </div>
                 <div class="row">
                     <div class="form-group col-lg-6">
-                        <label for="">商品详情：</label>
-                        <textarea rows="7" class="form-control"></textarea>
+                        <label>商品详情：</label>
+                        <textarea rows="7" class="form-control" id="addGoodsIntroduction"></textarea>
                     </div>
                     <div class="form-group col-lg-6">
-                        <label for="">商品图片：</label>
-                        <form class="dropzone" id="dropzone-upload">
-                            <div class="dz-default dz-message"><span>点击上传</span></div>
-                        </form>
+                        <label>商品图片：</label>
+                        <div class="dropzone">
+                            <form id="dropzone-upload">
+                                <div class="dz-default dz-message"><span>点击上传</span></div>
+                            </form>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
@@ -191,10 +211,13 @@
 <script src="js/common.js" type="text/javascript" charset="utf-8"></script>
 
 <!-- App functions and actions -->
+<!-- 漂亮弹框 开始 -->
+<script src="js/sweetalert.min.js"></script>
+<!-- 漂亮弹框 结束 -->
 <script src="js/app.min.js"></script>
 <script src="js/url.js"></script>
 <!-- 下拉列表js -->
-<script src="js/select1.js"></script>
+<script src="js/spinner.js"></script>
 <!-- 自己写的js代码 -->
 <script>
     // 加载页面头部内容
@@ -209,11 +232,76 @@
     $(function () {
         // 添加一级下拉菜单
         addReceiverSpinner($("#receivers"));
+        // 设置一级类别的change事件，当控件中数据发生改变并失去焦点时会触发
+        $("#receivers").change(function () {
+            addLevel($(this), $("#levels"), null);
+        });
+        // 文件上传插件的配置
+        let filePath = "upload-images/goods-images/";
+        let fileName;
+        let extension;
+        var dropz = new Dropzone('div.dropzone', {
+            url: urlArray[13], // 上传的url
+            method: "post",
+            paramName: "myFile", //参数名
+            autoProcessQueue: true, //自动上传
+            maxFilesize: 10, // MB
+            uploadMultiple: false, //是否在一个请求中发送多个文件
+            parallelUploads: 1, //并行处理上传文件数
+            acceptedFiles: ".jpg,.bmp,.gif,.png",
+            dictInvalidFileType: "支持的文件类型是.jpg,.bmp,.gif,.png", //当文件类型不匹配时的提示信息
+            addRemoveLinks: true,
+            dictRemoveFile: "移除文件",
+            dictUploadCanceled: "取消",
+            maxFiles: 1, // 一次只能上传一个文件
+            dictCancelUploadConfirmation: "取消上传该文件?",
+            init: function () {
+                this.on("success", function (file, result) {
+                    fileName = result.resultData.fileName;
+                    extension = result.resultData.extension;
+                });
+                this.on("removedfile", function (file) {
+                    if (fileName != "" && extension != "") {
+                        var data = {
+                            "fileName": fileName + extension
+                        };
+                        $.get(urlArray[13], data, function (result) {
+                            if (result.code != 0) {
+                                swal("失败", "", "error", {
+                                    customClass: "sweetAlert"
+                                });
+                            } else {
+                                fileName = "";
+                                extension = "";
+                                swal("成功", "", "success", {
+                                    button: false,
+                                    className: "sweetAlert"
+                                });
+                                setInterval(function () {
+                                    swal.close();
+                                }, 1800);
+                            }
+                        });
+                    }
+                });
+            }
+        });
         $("#btn1").click(function () {
+            const goodsName = $("#goodsName");
+            const receivers = $("#receivers");
+            const levels = $("#levels");
+
             var price1 = $("#goodsPrice");
             var price2 = $("#goodsDiscount");
             var errorPrice = $("#errorPrice");
             var errorPrice2 = $("#errorPrice2");
+            if (goodsName.val() == "") {
+                $("#errorName").text("商品名称不能为空！");
+                goodsName.select();
+                return false;
+            } else {
+                $("#errorName").text("");
+            }
             if (!isPrice(price1.val())) {
                 errorPrice.text("商品价格格式错误");
                 price1.select();
@@ -232,6 +320,45 @@
                 errorPrice.text("");
                 errorPrice2.text("");
             }
+            if (receivers.val() == 0) {
+                $("#errorReceivers").text("请选择一级类别!");
+                receivers.select();
+                return false;
+            } else if (levels.val() == 0) {
+                $("#errorReceivers").text("");
+                $("#errorLevels").text("请选择二级类别!");
+                levels.select();
+                return false;
+            } else {
+                $("#errorReceivers").text("");
+                $("#errorLevels").text("");
+            }
+            // 校验通过 调用后台存储商品数据
+            if (fileName == undefined || extension == undefined) {
+                fileName = "goods";
+                extension = ".jpg";
+            }
+            const goodsImage = filePath + fileName + extension;
+            const args = {
+                goodsName: goodsName.val(),
+                goodsPrice: price1.val(),
+                goodsDiscount: price2.val(),
+                goodsNew: $("#addGoodsNew").val(),
+                goodsHot: $("#addGoodsHot").val(),
+                goodsUpershelf: $("#addGoodsUpershelf").val(),
+                goodsBrief: $("#goodsDesc").val(),
+                goodsIntroduction: $("#addGoodsIntroduction").val(),
+                goodsImage: goodsImage,
+                levelId: $("#levels").val(),
+                goodsStock: $("#addGoodsStock").val()
+            };
+            $.post(urlArray[15], args, (result) => {
+                if (result.code == 0) {
+                    swal("成功", "添加商品成功！", "success");
+                } else {
+                    swal("失败", result.message, "error");
+                }
+            })
         });
     });
 </script>
