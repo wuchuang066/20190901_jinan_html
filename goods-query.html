@@ -320,7 +320,7 @@
         $("#updateGoodsImageBtn").click(function () {
             let formData = new FormData($("#updateGoodsImageForm")[0]);
             $.ajax({
-                url: urlArray[13],
+                url: uploadGoodsImgUrl,
                 type: "post",
                 dataType: "json",
                 cache: false,
@@ -340,7 +340,7 @@
                         const args = {
                             fileName
                         };
-                        $.get(urlArray[14], args, null);
+                        $.get(deleteGoodsImgUrl, args, null);
 
                         // 修改商品的参数
                         const data = {
@@ -360,7 +360,7 @@
 
         function selectGoods(pageNumber) {
             tempPageNumber = pageNumber;
-            const url = urlArray[11] + pageNumber;
+            const url = goodsMsgQueryUrl + pageNumber;
             const data = {
                 goodsName: $("#queryGoodsName").val(),
                 priceMin: $("#selectGoodsPriceMin").val(),
@@ -516,7 +516,7 @@
          * @param args
          */
         function updateGoods(args) {
-            $.post(urlArray[12], args, function (result) {
+            $.post(goodsMsgUpdateUrl, args, function (result) {
                 if (result.code == 0) selectGoods(tempPageNumber);
             })
         }

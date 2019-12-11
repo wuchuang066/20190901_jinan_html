@@ -225,7 +225,7 @@
                 userSex: $("#userSex").val(),
                 userAddress: $("#userAddress").val()
             };
-            const url = urlArray[8] + pageNumber;
+            const url = userMsgQueryUrl + pageNumber;
             $.post(url, data, (result) => {
                 console.log(result);
                 if (result.code == 0) {
@@ -264,7 +264,7 @@
                                     userState
                                 }
                                 console.log(data);
-                                $.post(urlArray[9], data);
+                                $.post(userMsgUpdateUrl, data);
                             } else {
                                 swal(`😊`, `${userName}的状态未修改`).then(() => {
                                     selectUsers(tempPageNumber);

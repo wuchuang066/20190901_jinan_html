@@ -2,10 +2,11 @@
  * pageButtonBody:显示分页按钮的容器(ul),
  * pageInfo 分页信息
  * selectMethod 查询当前页数据的方法  当点击分页的超链接时,需要调用的方法
+ * other 点击分页按钮时需要传递的其他的参数
  */
-function showPageButton(pageButtonBody, pageInfo,selectMethod) {
-    // 查找li 并删除
-    pageButtonBody.find('li').remove();
+function showPageButton1(pageButtonBody, pageInfo, selectMethod, other) {
+	// 查找li 并删除
+	pageButtonBody.find('li').remove();
 	// 判断页面中是否需要显示分页按钮
 	const pages = pageInfo.pages;
 	if (pages <= 1) {
@@ -19,7 +20,7 @@ function showPageButton(pageButtonBody, pageInfo,selectMethod) {
 		pageButtonBody.append(`<li class="page-item pagination-prev disabled"><a class="page-link" href="#"></a></li>`);
 	} else {
 		pageButtonBody.append(
-			`<li class="page-item pagination-prev"><a class="page-link pageButton" href=${pageNum-1}></a></li>`);
+			`<li class="page-item pagination-prev"><a class="page-link pageButton" href=${pageNum - 1}></a></li>`);
 	}
 
 	/* 普通页数 */
@@ -41,18 +42,26 @@ function showPageButton(pageButtonBody, pageInfo,selectMethod) {
 		pageButtonBody.append(`<li class="page-item pagination-next disabled"><a class="page-link" href="#"></a></li>`);
 	} else {
 		pageButtonBody.append(
-			`<li class="page-item pagination-next"><a class="page-link pageButton" href=${parseInt(pageNum)+1}></a></li>`
+			`<li class="page-item pagination-next"><a class="page-link pageButton" href=${parseInt(pageNum) + 1}></a></li>`
 		);
 	}
 
 	/* 分页按钮的单击事件 */
 	// 为class 属性为 pageButton 的分页超链接添加单击事件
-	$(".pageButton").on('click', function() {
+	$(".pageButton").on('click', function () {
 		// 获取a链接的页码
 		const temp = $(this).attr("href");
-		selectMethod(temp);
+		if (other == null) {
+			selectMethod(temp);
+		}else{
+			selectMethod(other,temp);
+		}
 		// 阻止默认请求
 		return false;
 	})
 
+}
+/** showPageButton方法的重载 */
+function showPageButton(pageButtonBody, pageInfo, selectMethod) {
+	showPageButton1(pageButtonBody, pageInfo, selectMethod, null);
 }

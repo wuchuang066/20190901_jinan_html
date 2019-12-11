@@ -45,17 +45,54 @@
 		<!-- 订单管理菜单 -->
 		<li id="order-menu"><a href="order-manager.html"><i class="zmdi zmdi-mall zmdi-hc-fw"></i> 订 单 管 理</a></li>
 		<!-- 统计模块 -->
-		<li class="navigation__sub">
+		<li class="navigation__sub" id="group-menu">
 			<a href=""><i class="zmdi zmdi-chart zmdi-hc-fw"></i> 统 计 模 块</a>
 			<ul>
-				<li><a href="goods-charts.html">商品统计</a></li>
-				<li><a href="order-charts.html">订单统计</a></li>
+				<li><a href="goods-charts.html" id="group-menu-goods">商品统计</a></li>
+				<li><a href="order-charts.html" id="group-menu-order">订单统计</a></li>
 			</ul>
 		</li>
 
 	</ul>
 	<!-- 左侧菜单 end -->
 </div>
+<!-- 模态框 start -->
+<div class="modal fade" id="updateAdminPasswordModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- 模态框顶部 -->
+            <div class="modal-header">
+                <h5 class="modal-title pull-left">Admin Message</h5>
+            </div>
+            <!-- 模态框中间部分 -->
+            <div class="modal-body">
+                <!-- 添加隐藏表单域 保存管理员编号 和页码-->
+                <input type="hidden" id="updateAdminId">
+                <input type="hidden" id="adminPage" value="1">
+                <div class="row">
+                    <div class="col-lg-3 text-center" style="padding-top: 8px;">管理员姓名:</div>
+                    <div class="col-lg-9"><input type="text" class="form-control" id="updateAdminName"></div>
+                </div>
+                <div class="row" style="margin-top:10px">
+                    <div class="col-lg-3 text-center" style="padding-top: 8px;">管理员电话:</div>
+                    <div class="col-lg-9"><input type="text" class="form-control" id="updateAdminPhone"></div>
+                </div>
+                <div class="row" style="margin-top:10px">
+                    <div class="col-lg-3 text-center" style="padding-top: 8px;">管理员邮箱:</div>
+                    <div class="col-lg-9"><input type="text" class="form-control" id="updateAdminEmail"></div>
+                </div>
+
+            </div>
+
+            <!-- 模态框底部 -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-link" id="updateAdminMsg">修改</button>
+                <button type="button" class="btn btn-link" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 模态框 end -->
 <script type="text/javascript">
 	
 	//获得浏览器中SessionScorage 中登录信息

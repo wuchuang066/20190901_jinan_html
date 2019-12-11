@@ -1,272 +1,337 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<title>XXXX 商城后台管理系统</title>
-		<!-- 导入图标 -->
-		<link href="img/favicon1.ico" rel="icon">
-		<!-- Vendor styles -->
-		<link rel="stylesheet" href="vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css">
-		<link rel="stylesheet" href="vendors/bower_components/animate.css/animate.min.css">
-		<link rel="stylesheet" href="vendors/bower_components/jquery.scrollbar/jquery.scrollbar.css">
-		<link rel="stylesheet" href="vendors/bower_components/fullcalendar/dist/fullcalendar.min.css">
-		<link rel="stylesheet" href="vendors/bower_components/select2/dist/css/select2.min.css">
-		<link rel="stylesheet" href="vendors/bower_components/flatpickr/dist/flatpickr.min.css" />
-		<!-- App styles -->
-		<link rel="stylesheet" href="css/app.min.css">
 
-	</head>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>XXXX 商城后台管理系统</title>
+    <!-- 导入图标 -->
+    <link href="img/favicon1.ico" rel="icon">
+    <!-- Vendor styles -->
+    <link rel="stylesheet"
+        href="vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="vendors/bower_components/animate.css/animate.min.css">
+    <link rel="stylesheet" href="vendors/bower_components/jquery.scrollbar/jquery.scrollbar.css">
+    <link rel="stylesheet" href="vendors/bower_components/fullcalendar/dist/fullcalendar.min.css">
+    <link rel="stylesheet" href="vendors/bower_components/select2/dist/css/select2.min.css">
+    <link rel="stylesheet" href="vendors/bower_components/flatpickr/dist/flatpickr.min.css" />
+    <!-- App styles -->
+    <link rel="stylesheet" href="css/app.min.css">
 
-	<body data-sa-theme="1">
-		<main class="main">
-			<div class="page-loader">
-				<div class="page-loader__spinner">
-					<svg viewBox="25 25 50 50">
-						<circle cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
-					</svg>
-				</div>
-			</div>
-			<!-- 页面顶部开始 -->
-			<header class="header">
+</head>
 
-			</header>
-			<!-- 页面顶部结束 -->
-			<!-- 页面左侧代码 start -->
-			<aside class="sidebar">
+<body data-sa-theme="1">
+    <main class="main">
+        <div class="page-loader">
+            <div class="page-loader__spinner">
+                <svg viewBox="25 25 50 50">
+                    <circle cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+                </svg>
+            </div>
+        </div>
+        <!-- 页面顶部开始 -->
+        <header class="header">
 
-			</aside>
-			<!-- 页面左侧 end -->
-			<!-- 右侧内容开始 -->
-			<section class="content">
-				<nav aria-label="breadcrumb" role="navigation">
-					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="#">订单管理</a></li>
-					</ol>
-				</nav>
-				<div class="card">
-					<div class="card-body">
-						<div class="row">
-							<div class="col-lg-3">
-								<input type="text" name="" id="" value="" class="form-control" placeholder="用户名..." />
-								<i class="form-group__bar"></i>
-							</div>
-							<div class="input-group col-lg-3">
-								<span class="input-group-addon"><i class="zmdi zmdi-calendar"></i></span>
-								<div class="form-group">
-									<input type="text" class="form-control date-picker" placeholder="请选择开始日期...">
-									<i class="form-group__bar"></i>
-								</div>
-							</div>
-							<div class="input-group col-lg-3">
-								<span class="input-group-addon"><i class="zmdi zmdi-calendar"></i></span>
-								<div class="form-group">
-									<input type="text" class="form-control date-picker" placeholder="请选择结束日期...">
-									<i class="form-group__bar"></i>
-								</div>
-							</div>
-							<div class="col-lg-3">
-								<button class="btn btn-light btn--icon-text"><i class="zmdi zmdi-search"></i> 查询</button>
-							</div>
-						</div>
-						<hr>
-						<table class="table table-hover">
-							<thead>
-								<tr>
-									<th width="7%">序号</th>
-									<th width="10%">下单用户名</th>
-									<th width="10%">收货人姓名</th>
-									<th width="12%">收货人联系方式</th>
-									<th>收货地址</th>
-									<th width="10%">订单状态</th>
-									<th width="20%">订单时间</th>
-									<th width="8%">订单明细</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>1</td>
-									<td>张三</td>
-									<td>李四</td>
-									<td>13800000000</td>
-									<td>北京市海淀区中关村软件园333栋楼</td>
-									<td>已发货</td>
-									<td>2019-10-10 10:10:10</td>
-									<td>
-										<a href="#" class="orderMessage">订单明细</a>
-									</td>
-								</tr>
-								<tr>
-									<td>1</td>
-									<td>张三</td>
-									<td>李四</td>
-									<td>13800000000</td>
-									<td>北京市海淀区中关村软件园333栋楼</td>
-									<td>已发货</td>
-									<td>2019-10-10 10:10:10</td>
-									<td>
-										<a href="#" class="orderMessage">订单明细</a>
-									</td>
-								</tr>
+        </header>
+        <!-- 页面顶部结束 -->
+        <!-- 页面左侧代码 start -->
+        <aside class="sidebar">
 
-							</tbody>
+        </aside>
+        <!-- 页面左侧 end -->
+        <!-- 右侧内容开始 -->
+        <section class="content">
+            <nav aria-label="breadcrumb" role="navigation">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">订单管理</a></li>
+                </ol>
+            </nav>
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <input type="text" name="" id="selectUserName" value="" class="form-control"
+                                placeholder="用户名..." />
+                            <i class="form-group__bar"></i>
+                        </div>
+                        <div class="input-group col-lg-3">
+                            <span class="input-group-addon"><i class="zmdi zmdi-calendar"></i></span>
+                            <div class="form-group">
+                                <input type="text" id="selectOrderDateMin" class="form-control date-picker"
+                                    placeholder="请选择开始日期...">
+                                <i class="form-group__bar"></i>
+                            </div>
+                        </div>
+                        <div class="input-group col-lg-3">
+                            <span class="input-group-addon"><i class="zmdi zmdi-calendar"></i></span>
+                            <div class="form-group">
+                                <input type="text" id="selectOrderDateMax" class="form-control date-picker"
+                                    placeholder="请选择结束日期...">
+                                <i class="form-group__bar"></i>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <button class="btn btn-light btn--icon-text" id="selectOrderBtn"><i
+                                    class="zmdi zmdi-search"></i> 查询
+                            </button>
+                        </div>
+                    </div>
+                    <hr>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th width="7%">序号</th>
+                                <th width="10%">下单用户名</th>
+                                <th width="10%">收货人姓名</th>
+                                <th width="12%">收货人联系方式</th>
+                                <th>收货地址</th>
+                                <th width="10%">订单状态</th>
+                                <th width="20%">订单时间</th>
+                                <th width="8%">订单明细</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orderMsgBody">
+                            <tr>
+                                <td>1</td>
+                                <td>张三</td>
+                                <td>李四</td>
+                                <td>13800000000</td>
+                                <td>北京市海淀区中关村软件园333栋楼</td>
+                                <td>已发货</td>
+                                <td>2019-10-10 10:10:10</td>
+                                <td>
+                                    <a href="#" class="orderMessage">订单明细</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>张三</td>
+                                <td>李四</td>
+                                <td>13800000000</td>
+                                <td>北京市海淀区中关村软件园333栋楼</td>
+                                <td>已发货</td>
+                                <td>2019-10-10 10:10:10</td>
+                                <td>
+                                    <a href="#" class="orderMessage">订单明细</a>
+                                </td>
+                            </tr>
 
-						</table>
-						<nav>
-							<ul class="pagination justify-content-center">
-								<li class="page-item pagination-prev"><a class="page-link" href="#"></a></li>
-								<li class="page-item"><a class="page-link" href="#">1</a></li>
-								<li class="page-item"><a class="page-link" href="#">2</a></li>
-								<li class="page-item"><a class="page-link" href="#">3</a></li>
-								<li class="page-item"><a class="page-link" href="#">4</a></li>
-								<li class="page-item"><a class="page-link" href="#">5</a></li>
-								<li class="page-item"><a class="page-link" href="#">6</a></li>
-								<li class="page-item pagination-next"><a class="page-link" href="#"></a></li>
-							</ul>
-						</nav>
-					</div>
-				</div>
-			</section>
-			<!-- 右侧内容结束 -->
-		</main>
+                        </tbody>
 
-		<!-- 模态框 start -->
-		<div class="modal fade" id="orderModal" tabindex="-1">
-			<div class="modal-dialog modal-lg">
-				<div class="modal-content">
-					<!-- 模态框顶部 -->
-					<div class="modal-header">
-						<h5 class="modal-title pull-left"> XXXX xxxx XXX 的订单明细</h5>
-					</div>
-					<!-- 模态框中间部分 -->
-					<div class="modal-body">
-						<table class="table table-hover">
-							<thead>
-								<th>序号</th>
-								<th>商品编号</th>
-								<th>商品名称</th>
-								<th>成交价</th>
-								<th>数量</th>
-							</thead>
+                    </table>
+                    <nav>
+                        <ul id="orderPageBtn" class="pagination justify-content-center">
 
-							<tbody>
-								<tr>
-									<td>1</td>
-									<td>12314234</td>
-									<td>小米18 纯净版 高清相机 至尊豪华版</td>
-									<td>￥18,888.88</td>
-									<td>1888</td>
-								</tr>
-								<tr>
-									<td>1</td>
-									<td>12314234</td>
-									<td>小米18 纯净版 高清相机 至尊豪华版</td>
-									<td>￥18,888.88</td>
-									<td>1888</td>
-								</tr>
-								<tr>
-									<td>1</td>
-									<td>12314234</td>
-									<td>小米18 纯净版 高清相机 至尊豪华版</td>
-									<td>￥18,888.88</td>
-									<td>1888</td>
-								</tr>
-								<tr>
-									<td>1</td>
-									<td>12314234</td>
-									<td>小米18 纯净版 高清相机 至尊豪华版</td>
-									<td>￥18,888.88</td>
-									<td>1888</td>
-								</tr>
-								<tr>
-									<td>1</td>
-									<td>12314234</td>
-									<td>小米18 纯净版 高清相机 至尊豪华版</td>
-									<td>￥18,888.88</td>
-									<td>1888</td>
-								</tr>
-								<tr>
-									<td>1</td>
-									<td>12314234</td>
-									<td>小米18 纯净版 高清相机 至尊豪华版</td>
-									<td>￥18,888.88</td>
-									<td>1888</td>
-								</tr>
-								<tr>
-									<td>1</td>
-									<td>12314234</td>
-									<td>小米18 纯净版 高清相机 至尊豪华版</td>
-									<td>￥18,888.88</td>
-									<td>1888</td>
-								</tr>
-							</tbody>
-						</table>
-						<nav>
-							<ul class="pagination justify-content-center">
-								<li class="page-item pagination-prev"><a class="page-link" href="#"></a></li>
-								<li class="page-item"><a class="page-link" href="#">1</a></li>
-								<li class="page-item"><a class="page-link" href="#">2</a></li>
-								<li class="page-item"><a class="page-link" href="#">3</a></li>
-								<li class="page-item"><a class="page-link" href="#">4</a></li>
-								<li class="page-item"><a class="page-link" href="#">5</a></li>
-								<li class="page-item"><a class="page-link" href="#">6</a></li>
-								<li class="page-item pagination-next"><a class="page-link" href="#"></a></li>
-							</ul>
-						</nav>
-					</div>
-					<!-- 模态框底部 -->
-					<div class="modal-footer">
-						<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- 模态框 end -->
-		<!-- Javascript -->
-		<!-- Vendors -->
-		<script src="js/jquery-1.10.2.js"></script>
-		<script src="vendors/bower_components/popper.js/dist/umd/popper.min.js"></script>
-		<script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-		<script src="vendors/bower_components/jquery.scrollbar/jquery.scrollbar.min.js"></script>
-		<script src="vendors/bower_components/jquery-scrollLock/jquery-scrollLock.min.js"></script>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </section>
+        <!-- 右侧内容结束 -->
+    </main>
 
+    <!-- 模态框 start -->
+    <div class="modal fade" id="orderDetailModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <!-- 模态框顶部 -->
+                <div class="modal-header">
+                    <h5 class="modal-title pull-left"> XXXX xxxx XXX 的订单明细</h5>
+                </div>
+                <!-- 模态框中间部分 -->
+                <div class="modal-body">
+                    <table class="table table-hover">
+                        <thead>
+                            <th>序号</th>
+                            <th>商品编号</th>
+                            <th>商品名称</th>
+                            <th>成交价</th>
+                            <th>数量</th>
+                        </thead>
 
+                        <tbody id="orderDetailModalTbody">
 
-		<script src="vendors/bower_components/salvattore/dist/salvattore.min.js"></script>
-		<script src="vendors/bower_components/flot/jquery.flot.js"></script>
-		<script src="vendors/bower_components/flot/jquery.flot.resize.js"></script>
-		<script src="vendors/bower_components/flot.curvedlines/curvedLines.js"></script>
-		<script src="vendors/bower_components/jqvmap/dist/jquery.vmap.min.js"></script>
-		<script src="vendors/bower_components/jqvmap/dist/maps/jquery.vmap.world.js"></script>
-		<script src="vendors/bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
-		<script src="vendors/bower_components/peity/jquery.peity.min.js"></script>
-		<script src="vendors/bower_components/moment/min/moment.min.js"></script>
-		<script src="vendors/bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
-		<script src="vendors/bower_components/select2/dist/js/select2.full.min.js"></script>
-		<script src="vendors/bower_components/flatpickr/dist/flatpickr.min.js"></script>
+                        </tbody>
+                    </table>
+                    <nav>
+                        <ul class="pagination justify-content-center" id="orderDetailModalPageBtn">
 
-		<!-- Charts and maps-->
+                        </ul>
+                    </nav>
+                </div>
+                <!-- 模态框底部 -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-link" data-dismiss="modal"
+                        id="orderDetailModalCloseBtn">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 模态框 end -->
+    <!-- Javascript -->
+    <!-- Vendors -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="vendors/bower_components/popper.js/dist/umd/popper.min.js"></script>
+    <script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="vendors/bower_components/jquery.scrollbar/jquery.scrollbar.min.js"></script>
+    <script src="vendors/bower_components/jquery-scrollLock/jquery-scrollLock.min.js"></script>
 
-		<script src="js/url.js"></script>
-		<!-- App functions and actions -->
-		<script src="js/app.min.js"></script>
-		<script src="vendors/bower_components/flot.curvedlines/curvedLines.js"></script>
-		<!-- 自己写的js代码 -->
-		<script type="text/javascript">
-			// 加载页面头部内容
-			$(".header").load("head.html");
-			// 设置激活菜单
-			window.sessionStorage.removeItem("menu");
-			window.sessionStorage.removeItem("sub-menu");
-			window.sessionStorage.setItem("menu", "order-menu");
-			// 加载页面左侧内容
-			$(".sidebar").load("left.html");
-			$(function() {
-				$(".orderMessage").click(function() {
-					$("#orderModal").modal("show");
-					return false;
-				});
-			});
-		</script>
-	</body>
+    <script src="vendors/bower_components/salvattore/dist/salvattore.min.js"></script>
+    <script src="vendors/bower_components/flot/jquery.flot.js"></script>
+    <script src="vendors/bower_components/flot/jquery.flot.resize.js"></script>
+    <script src="vendors/bower_components/flot.curvedlines/curvedLines.js"></script>
+    <script src="vendors/bower_components/jqvmap/dist/jquery.vmap.min.js"></script>
+    <script src="vendors/bower_components/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+    <script src="vendors/bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
+    <script src="vendors/bower_components/peity/jquery.peity.min.js"></script>
+    <script src="vendors/bower_components/moment/min/moment.min.js"></script>
+    <script src="vendors/bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
+    <script src="vendors/bower_components/select2/dist/js/select2.full.min.js"></script>
+    <script src="vendors/bower_components/flatpickr/dist/flatpickr.min.js"></script>
+
+    <!-- Charts and maps-->
+    <script src="js/url.js"></script>
+    <!-- 漂亮弹框 开始 -->
+    <script src="js/sweetalert.min.js"></script>
+    <!-- 商品名称js -->
+    <script src="js/common.js"></script>
+    <!-- App functions and actions -->
+    <script src="js/app.min.js"></script>
+    <script src="vendors/bower_components/flot.curvedlines/curvedLines.js"></script>
+
+    <!-- 导入分页按钮-->
+    <script src="js/pageButtons.js"></script>
+    <!-- 自己写的js代码 -->
+    <script type="text/javascript">
+        // 加载页面头部内容
+        $(".header").load("head.html");
+        // 设置激活菜单
+        window.sessionStorage.removeItem("menu");
+        window.sessionStorage.removeItem("sub-menu");
+        window.sessionStorage.setItem("menu", "order-menu");
+        // 加载页面左侧内容
+        $(".sidebar").load("left.html");
+        window.onload = () => {
+            $("#selectOrderBtn").trigger("click");
+        }
+        $(function () {
+            $(".orderMessage").click(function () {
+                $("#orderDetailModal").modal("show");
+                return false;
+            });
+            // 设置 页面查询按钮的单击事件
+            $("#selectOrderBtn").click(() => {
+                selectOrderMsg(1);
+            });
+
+            // 查询指定页数的订单信息
+            function selectOrderMsg(pageNumber) {
+                const orderBody = $("#orderMsgBody");
+                orderBody.find("tr").remove();
+                //查询并添加数据
+                const data = {
+                    "users.userName": $("#selectUserName").val(),
+                    orderDateMin: $("#selectOrderDateMin").val(),
+                    orderDateMax: $("#selectOrderDateMax").val()
+                };
+                const url = orderMsgQueryUrl + pageNumber;
+                $.post(url, data, (result) => {
+                    if (result.code == 0) {
+                        const pages = result.resultData.pages;
+                        const orderList = pages.list;
+                        for (let [index, order] of orderList.entries()) {
+                            const tr = $(`<tr></tr>`);
+                            tr.append(`<td>${pages.startRow + index}</td>`);
+                            tr.append(`<td>${order.users.userName}</td>`);
+                            tr.append(`<td>${order.consigneeName}</td>`);
+                            tr.append(`<td>${order.orderPhone}</td>`);
+                            tr.append(`<td>${order.consigneeAddress}</td>`);
+                            switch (order.orderState) {
+                                case 1:
+                                    tr.append(`<td>待付款</td>`);
+                                    break;
+                                case 2:
+                                    tr.append(`<td>已支付</td>`);
+                                    break;
+                                case 3:
+                                    tr.append(`<td>待发货</td>`);
+                                    break;
+                                case 4:
+                                    tr.append(`<td>已发货</td>`);
+                                    break;
+                                case 5:
+                                    tr.append(`<td>已签收</td>`);
+                                    break;
+                                case 6:
+                                    tr.append(`<td>已退货</td>`);
+                                    break;
+                                case 7:
+                                    tr.append(`<td>已退款</td>`);
+                                    break;
+
+                            }
+                            const orderDate = new Date(order.orderDate);
+                            tr.append(`<td>${orderDate.toLocaleDateString().replace(/\//g, "-") + "  " + orderDate.toTimeString().substr(0, 8)}</td>`);
+                            tr.append(`<td><a href=${order.orderId} class="orderDetailHref">订单明细</a></td>`);
+                            orderBody.append(tr);
+                        }
+                        // 添加分页按钮
+                        // 获得显示分页按钮的容器
+                        const pageButton = $("#orderPageBtn");
+                        showPageButton(pageButton, pages, selectOrderMsg);
+                        $(".orderDetailHref").on("click", function () {
+                            const orderId = $(this).attr("href");
+                            /* 查询指定订单编号的订单明细的第一页 */
+                            queryOrderDetail(orderId, 1);
+                            // 阻止超链接发出请求
+                            return false;
+                        });
+                    } else {
+                        /** 没有数据先移除分页按钮*/
+                        $("#orderPageBtn").find("li").remove();
+                        const tr = $("<tr><td colspan='8'>没有查询到满足条件的信息！！！！</td></tr>");
+                        orderBody.append(tr);
+                    }
+                })
+
+            };
+            // 关闭模态框
+            $("#orderDetailModalCloseBtn").on("click", function () {
+                $("#orderDetailModal").modal("hide");
+            });
+            // 根据订单编号查询指定页数的订单详情
+            function queryOrderDetail(orderId, pageNumber) {
+                const url = orderDetailMsgQueryUrl + pageNumber;
+                $.post(url, { orderId }, (result) => {
+                    if (result.code == 0) {
+                        $("#orderDetailModal").modal("show");
+                        const orderDetailModalTbody = $("#orderDetailModalTbody");
+                        //先移除之前的tr
+                        orderDetailModalTbody.find("tr").remove();
+                        const pages = result.resultData.pages;
+                        const orderDetailList = pages.list;
+                        for (let [index, orderDetail] of orderDetailList.entries()) {
+                            const tr = $("<tr></tr>");
+                            tr.append(`<td>${pages.startRow + index}</td>`);
+                            tr.append(`<td>${orderDetail.goodsId}</td>`);
+                            tr.append(`<td title=${orderDetail.goodsName}>${rename(orderDetail.goodsName, 25)}</td>`);
+                            tr.append(`<td>￥${formatNumber(orderDetail.dealPrice)}</td>`);
+                            tr.append(`<td>${orderDetail.dealNumber}</td>`);
+                            orderDetailModalTbody.append(tr);
+                        }
+                        /* 插入分页按钮 */
+                        if (pages.pages > 0) {
+                            const pageButton = $("#orderDetailModalPageBtn");
+                            showPageButton1(pageButton, pages, queryOrderDetail, orderId);
+                        }
+                    } else {
+                        swal("查询失败", result.message, "error");
+                    }
+                })
+
+            }
+        });
+    </script>
+</body>
+
 </html>

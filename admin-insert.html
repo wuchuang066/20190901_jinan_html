@@ -174,7 +174,7 @@
 				// 文件上传插件的配置
 				var dropz = new Dropzone('div.dropzone', {
 					// $("#dropzone-upload").dropzone({
-					url: urlArray[2], // 上传的url
+					url: uploadAdminImgUrl, // 上传的url
 					method: "post",
 					paramName: "myFile", //参数名
 					autoProcessQueue: true, //自动上传
@@ -198,7 +198,7 @@
 								var data = {
 									"fileName": fileName + extension
 								};
-								$.get(urlArray[3], data, function(result) {
+								$.get(adminDeleteImgUrl, data, function(result) {
 									if (result.code != 0) {
 										swal("失败", "", "error", {
 											customClass: "sweetAlert"
@@ -292,7 +292,7 @@
 						"adminPower": permission.val(),
 						"adminState": 1
 					};
-					$.post(urlArray[4], data, function(result) {
+					$.post(adminRegisterUrl, data, function(result) {
 						if (result.code == 0) {
 							swal("新建成功",
 									"您注册的编号为" + result.resultData.adminMsg.adminId, "success")

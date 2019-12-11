@@ -22,7 +22,7 @@ function addLevel(receiverSelect, levelSelect, levelValue) {
     // 获得一级类别的编号
     const receiverId = receiverSelect.val();
     if(receiverId == -1) return;
-    const url = urlArray[10] + receiverId;
+    const url = receiverMsgQueryUrl + receiverId;
     // 先移除 所有的option 否则会多option
     levelSelect.find('.select-item').remove();
     $.get(url, null, (result) => {

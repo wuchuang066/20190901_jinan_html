@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>XXXX 商城后台管理系统</title>
+	<!-- 导入图标 -->
+	<link href="img/favicon1.ico" rel="icon">
+	<!-- Vendor styles -->
+	<link rel="stylesheet"
+		href="vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css">
+	<link rel="stylesheet" href="vendors/bower_components/animate.css/animate.min.css">
+	<link rel="stylesheet" href="vendors/bower_components/jquery.scrollbar/jquery.scrollbar.css">
+	<link rel="stylesheet" href="vendors/bower_components/fullcalendar/dist/fullcalendar.min.css">
+	<link rel="stylesheet" href="vendors/bower_components/select2/dist/css/select2.min.css">
+    <link rel="stylesheet" href="vendors/bower_components/flatpickr/dist/flatpickr.min.css" />
+
+	<!-- App styles -->
+	<link rel="stylesheet" href="css/app.min.css">
+</head>
+
+<body data-sa-theme="1">
+	<main class="main">
+		<div class="page-loader">
+			<div class="page-loader__spinner">
+				<svg viewBox="25 25 50 50">
+					<circle cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+				</svg>
+			</div>
+		</div>
+		<!-- 页面顶部开始 -->
+		<header class="header">
+
+		</header>
+		<!-- 页面顶部结束 -->
+		<!-- 页面左侧代码 start -->
+		<aside class="sidebar">
+
+		</aside>
+		<!-- 右侧内容开始 -->
+		<section class="content">
+			<nav aria-label="breadcrumb" role="navigation">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="#">统计信息</a></li>
+					<li class="breadcrumb-item active" aria-current="page">订单统计</li>
+				</ol>
+			</nav>
+			<div class="card">
+				<div class="card-body">
+					<div class="row"> <div class="input-group col-lg-3">
+						<span class="input-group-addon"><i class="zmdi zmdi-calendar"></i></span>
+						<div class="form-group">
+							<input type="text" id="selectOrderDateMin" class="form-control date-picker"
+								placeholder="请选择开始日期...">
+							<i class="form-group__bar"></i>
+						</div>
+					</div>
+					<div class="input-group col-lg-3">
+						<span class="input-group-addon"><i class="zmdi zmdi-calendar"></i></span>
+						<div class="form-group">
+							<input type="text" id="selectOrderDateMax" class="form-control date-picker"
+								placeholder="请选择结束日期...">
+							<i class="form-group__bar"></i>
+						</div>
+					</div>
+					<div class="col-lg-3">
+						<button class="btn btn-light btn--icon-text" id="selectOrderBtn"><i
+								class="zmdi zmdi-search"></i> 查询
+						</button>
+					</div>
+						<div id="panel" class="col-12" style="height: 400px;"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- 右侧内容结束 -->
+
+	</main>
+	<!-- Javascript -->
+	<!-- Vendors -->
+	<script src="js/jquery-1.10.2.js"></script>
+	<script src="vendors/bower_components/popper.js/dist/umd/popper.min.js"></script>
+	<script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="vendors/bower_components/jquery.scrollbar/jquery.scrollbar.min.js"></script>
+	<script src="vendors/bower_components/jquery-scrollLock/jquery-scrollLock.min.js"></script>
+
+	<script src="vendors/bower_components/salvattore/dist/salvattore.min.js"></script>
+	<script src="vendors/bower_components/flot/jquery.flot.js"></script>
+	<script src="vendors/bower_components/flot/jquery.flot.resize.js"></script>
+	<script src="vendors/bower_components/flot.curvedlines/curvedLines.js"></script>
+	<script src="vendors/bower_components/jqvmap/dist/jquery.vmap.min.js"></script>
+	<script src="vendors/bower_components/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+	<script src="vendors/bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
+	<script src="vendors/bower_components/peity/jquery.peity.min.js"></script>
+	<script src="vendors/bower_components/moment/min/moment.min.js"></script>
+	<script src="vendors/bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
+	<script src="vendors/bower_components/select2/dist/js/select2.full.min.js"></script>
+    <script src="vendors/bower_components/flatpickr/dist/flatpickr.min.js"></script>
+
+	<!-- Charts and maps-->
+	<script src="demo/js/flot-charts/curved-line.js"></script>
+	<script src="demo/js/flot-charts/line.js"></script>
+	<!-- <script src="demo/js/flot-charts/dynamic.js"></script> -->
+	<script src="demo/js/flot-charts/chart-tooltips.js"></script>
+	<script src="demo/js/other-charts.js"></script>
+	<script src="demo/js/jqvmap.js"></script>
+
+	<!-- App functions and actions -->
+	<script src="js/app.min.js"></script>
+	<script src="js/url.js"></script>
+	<script src="js/echarts.common.min.js"></script>
+	<!-- 漂亮弹框 开始 -->
+	<script src="js/sweetalert.min.js"></script>
+	<!-- 漂亮弹框 结束 -->
+
+	<!-- 自己写的js代码 -->
+	<script type="text/javascript">
+		// 加载页面头部内容
+		$(".header").load("head.html");
+		// 设置激活菜单
+		window.sessionStorage.removeItem("menu");
+		window.sessionStorage.removeItem("sub-menu");
+		window.sessionStorage.setItem("menu", "group-menu");
+		window.sessionStorage.setItem("sub-menu", "group-menu-order");
+		// 加载页面左侧内容
+		$(".sidebar").load("left.html");
+		$(function () {
+			// 请求后台商品统计数据
+			$.get(groupGoodsDataUrl, null, (result) => {
+				if (result.code == 0) {
+					//获得显示图表的div，并进行初始化
+					const panel = echarts.init(document.getElementById("panel"));
+					// 设置图片的属性
+					let	option = {
+						xAxis: {
+							type: 'category',
+							data: result.resultData.xData,
+							axisLabel:{
+								color:"#40E0D0"
+							}
+						},
+						yAxis: {
+							type: 'value',
+							axisLabel:{
+								color:"#40E0D0"
+							}
+						},
+						series: [{
+							data: result.resultData.yData,
+							type: 'line'
+						}]
+					};
+					// 根据图片的属性在div中显示图表的图片
+					panel.setOption(option);
+
+				} else {
+					swal("失败", result.message, "error");
+				}
+			})
+		})
+	</script>
+</body>
+
+</html>

@@ -236,7 +236,7 @@
             // 移除所有的li
             pageBtnUl.find("li").remove();
             // 创建url
-            var url = urlArray[5] + pageNumber;
+            var url = adminMsgQueryUrl + pageNumber;
             var adminName = $("#admin-name").val();
             var adminPower = $("#admin-power").val();
             var data = {
@@ -311,7 +311,7 @@
                                     adminState: adminState == 1 ? 2 : 1
                                 }
                                 // 发送请求，修改状态
-                                $.get(urlArray[6], data);
+                                $.get(adminUpdateMsgUrl, data);
                                 // 修改html中input 的 checked 属性
                                 if (adminState == 1) {
                                     $(this).attr('checked', false);
@@ -330,7 +330,7 @@
                     $(".showAdminModel").on('click', function () {
                         // 获得href值
                         const adminId = $(this).attr("href");
-                        const url = urlArray[7] + adminId;
+                        const url = adminMsgQueryByIdUrl + adminId;
                         $.post(url, null, result => {
                             if (result.code == 0) {
                                 const admin = result.resultData.admin;
@@ -410,7 +410,7 @@
                 adminPhone: $("#updateAdminPhone").val(),
                 adminEmail: $("#updateAdminEmail").val()
             };
-            $.post(urlArray[6], data, (result) => {
+            $.post(adminUpdateMsgUrl, data, (result) => {
                 if (result.code == 0) {
                     $("#updateAdminMessage").modal("hide");
                     // 重新查询当前页管理员信息

@@ -1,4 +1,5 @@
-let urlArray = new Array(100);
+// BaseUrl
+const URLBASE = "http://localhost:8080/shopping_manage";
 
 // admin request
 const REQUEST_ADMIN = "/admin/";
@@ -10,40 +11,50 @@ const REQUEST_USER = "/user/";
 const REQUEST_LEVEL = "/level/";
 // goods request
 const REQUEST_GOODS = "/goods/";
+// orders
+const REQUEST_ORDERS = "/orders/";
+// orderDetail
+const REQUEST_ORDER_DETAILS = "/orderDetail/";
+// receiver
+const REQURST_RECEIVER = "/receiver/";
 
-// BaseUrl 
-urlArray[0] = "http://localhost:8080/shopping_manage";
+
 // 登陆url
-urlArray[1] = urlArray[0] + REQUEST_ADMIN + "login";
+const loginAdminUrl = URLBASE + REQUEST_ADMIN + "login";
 // 上传图片 管理员
-urlArray[2] = urlArray[0] + REQUEST_FILE + "upload/1";
+const uploadAdminImgUrl= URLBASE + REQUEST_FILE + "upload/1";
 // 删除上传图片
-urlArray[3] = urlArray[0] + REQUEST_FILE + "delete/1";
+const adminDeleteImgUrl = URLBASE + REQUEST_FILE + "delete/1";
 // 管理员注册
-urlArray[4] = urlArray[0] + REQUEST_ADMIN + "register";
+const adminRegisterUrl = URLBASE + REQUEST_ADMIN + "register";
 // 查询指定页数的管理员信息
-urlArray[5] = urlArray[0] + REQUEST_ADMIN + "select/";
+const adminMsgQueryUrl = URLBASE + REQUEST_ADMIN + "select/";
 // 更改管理员启用于禁用状态 模态框修改按钮修改管理员信息
-urlArray[6] = urlArray[0] + REQUEST_ADMIN + "update";
+const adminUpdateMsgUrl = URLBASE + REQUEST_ADMIN + "update";
 // 通过adminId 主键查询管理员信息
-urlArray[7] = urlArray[0] + REQUEST_ADMIN + "selectByAdminId/";
-
+const adminMsgQueryByIdUrl = URLBASE + REQUEST_ADMIN + "selectByAdminId/";
 // 通过user 查询用户信息
-urlArray[8] = urlArray[0] + REQUEST_USER + "selectUsersPage/";
+const userMsgQueryUrl= URLBASE + REQUEST_USER + "selectUsersPage/";
 // 修改用户状态
-urlArray[9] = urlArray[0] + REQUEST_USER + "updateUserState";
-
+const userMsgUpdateUrl= URLBASE + REQUEST_USER + "updateUserState";
 // 查询对应一级类别的二级类别的
-urlArray[10] = urlArray[0] + REQUEST_LEVEL + "selectByReceiverId/";
+const receiverMsgQueryUrl = URLBASE + REQUEST_LEVEL + "selectByReceiverId/";
 // 分页查询商品信息
-urlArray[11] = urlArray[0] + REQUEST_GOODS + "queryGoods/";
+const goodsMsgQueryUrl = URLBASE + REQUEST_GOODS + "queryGoods/";
 // 修改商品信息
-urlArray[12] = urlArray[0] + REQUEST_GOODS + "update";
+const goodsMsgUpdateUrl = URLBASE + REQUEST_GOODS + "update";
 // 上传图片 商品
-urlArray[13] = urlArray[0] + REQUEST_FILE + "upload/3";
+const uploadGoodsImgUrl = URLBASE + REQUEST_FILE + "upload/3";
 // 删除上传图片 商品
-urlArray[14] = urlArray[0] + REQUEST_FILE + "delete/3";
+const deleteGoodsImgUrl = URLBASE + REQUEST_FILE + "delete/3";
 // 添加商品信息
-urlArray[15] = urlArray[0] + REQUEST_GOODS + "insert";
+const addGoodsMsgUrl = URLBASE + REQUEST_GOODS + "insert";
+// 订单分页查询
+const orderMsgQueryUrl = URLBASE + REQUEST_ORDERS + "select/";
+
+// 根据订单编号查询订单明细查
+const orderDetailMsgQueryUrl = URLBASE+REQUEST_ORDER_DETAILS+"selectByOrderId/";
+// 查询统计商品数据
+const groupGoodsDataUrl = URLBASE+REQURST_RECEIVER+"selectGroup";
 
 

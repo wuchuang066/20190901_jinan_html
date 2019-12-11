@@ -117,7 +117,7 @@
 						"adminId": loginName.val(),
 						"adminPassword": loginPassword.val()
 					}
-					$.get( urlArray[1], data, function(result) {
+					$.get( loginAdminUrl, data, function(result) {
 						// 成功跳转到common.html 页面
 						if (result.code == 0) {
 							// 获得管理员登录信息并放置在session中

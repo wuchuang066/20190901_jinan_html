@@ -241,7 +241,7 @@
         let fileName;
         let extension;
         var dropz = new Dropzone('div.dropzone', {
-            url: urlArray[13], // 上传的url
+            url: uploadGoodsImgUrl, // 上传的url
             method: "post",
             paramName: "myFile", //参数名
             autoProcessQueue: true, //自动上传
@@ -265,7 +265,7 @@
                         var data = {
                             "fileName": fileName + extension
                         };
-                        $.get(urlArray[13], data, function (result) {
+                        $.get(uploadGoodsImgUrl, data, function (result) {
                             if (result.code != 0) {
                                 swal("失败", "", "error", {
                                     customClass: "sweetAlert"
@@ -352,7 +352,7 @@
                 levelId: $("#levels").val(),
                 goodsStock: $("#addGoodsStock").val()
             };
-            $.post(urlArray[15], args, (result) => {
+            $.post(addGoodsMsgUrl, args, (result) => {
                 if (result.code == 0) {
                     swal("成功", "添加商品成功！", "success");
                 } else {
