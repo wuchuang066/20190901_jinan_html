@@ -47,8 +47,8 @@ function showPageButton1(pageButtonBody, pageInfo, selectMethod, other) {
 	}
 
 	/* 分页按钮的单击事件 */
-	// 为class 属性为 pageButton 的分页超链接添加单击事件
-	$(".pageButton").on('click', function () {
+	// 为指定容器中 class 属性为 pageButton 的分页超链接添加单击事件
+	pageButtonBody.find($(".pageButton")).on('click', function () {
 		// 获取a链接的页码
 		const temp = $(this).attr("href");
 		if (other == null) {

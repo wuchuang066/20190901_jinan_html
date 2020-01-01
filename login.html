@@ -127,7 +127,7 @@
 							swal("登陆成功", "正在为您自动跳转到商城首页！", "success", {
 								button: false,
 							});
-							setInterval(function() {
+							setTimeout(function() {
 								swal.close();
 								window.location.href = "common.html";
 							}, 1800);

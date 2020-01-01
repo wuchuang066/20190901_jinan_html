@@ -5,7 +5,7 @@
 	<!-- 登录用户信息 start -->
 	<div class="user">
 		<div class="user__info" data-toggle="dropdown">
-			<img id="left-admin-image" class="user__img" src="demo/img/profile-pics/8.jpg" alt="">
+			<img id="left-admin-image" class="user__img" src="demo/img/profile-pics/7.jpg" alt="">
 			<div>
 				<span class="user__name" id="left-admin-name">vecher</span>
 				<span class="user__email" id="left-admin-power">超级管理员</span>
@@ -14,8 +14,8 @@
 		</div>
 
 		<div class="dropdown-menu">
-			<a class="dropdown-item" href="">查看</a>
-			<a class="dropdown-item" href="">设置</a>
+			<a class="dropdown-item" href="" id="openAdminMsgModal">修改密码</a>
+			<a class="dropdown-item" href="">修改头像</a>
 			<a class="dropdown-item" href="login.html">注销</a>
 		</div>
 	</div>
@@ -33,7 +33,8 @@
 		</li>
 
 		<!-- 一级菜单  不包含二级菜单 -->
-		<li id="user-menu"><a href="user-manager.html"><i class="zmdi zmdi-assignment-account zmdi-hc-fw"></i> 用 户 管 理</a></li>
+		<li id="user-menu"><a href="user-manager.html"><i class="zmdi zmdi-assignment-account zmdi-hc-fw"></i> 用 户 管
+				理</a></li>
 		<!-- 商品管理菜单 -->
 		<li class="navigation__sub" id="goods-menu">
 			<a href=""><i class="zmdi zmdi-case zmdi-hc-fw"></i> 商 品 管 理</a>
@@ -58,43 +59,44 @@
 </div>
 <!-- 模态框 start -->
 <div class="modal fade" id="updateAdminPasswordModal" tabindex="-1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <!-- 模态框顶部 -->
-            <div class="modal-header">
-                <h5 class="modal-title pull-left">Admin Message</h5>
-            </div>
-            <!-- 模态框中间部分 -->
-            <div class="modal-body">
-                <!-- 添加隐藏表单域 保存管理员编号 和页码-->
-                <input type="hidden" id="updateAdminId">
-                <input type="hidden" id="adminPage" value="1">
-                <div class="row">
-                    <div class="col-lg-3 text-center" style="padding-top: 8px;">管理员姓名:</div>
-                    <div class="col-lg-9"><input type="text" class="form-control" id="updateAdminName"></div>
-                </div>
-                <div class="row" style="margin-top:10px">
-                    <div class="col-lg-3 text-center" style="padding-top: 8px;">管理员电话:</div>
-                    <div class="col-lg-9"><input type="text" class="form-control" id="updateAdminPhone"></div>
-                </div>
-                <div class="row" style="margin-top:10px">
-                    <div class="col-lg-3 text-center" style="padding-top: 8px;">管理员邮箱:</div>
-                    <div class="col-lg-9"><input type="text" class="form-control" id="updateAdminEmail"></div>
-                </div>
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<!-- 模态框顶部 -->
+			<div class="modal-header">
+				<h5 class="modal-title pull-left">修改密码</h5>
+			</div>
+			<!-- 模态框中间部分 -->
+			<div class="modal-body">
+				<!-- 添加隐藏表单域 保存管理员编号 和页码-->
+				<input type="hidden" id="updateAdminId">
+				<div class="row">
+					<div class="col-lg-3 text-center" style="padding-top: 8px;">原密码:</div>
+					<div class="col-lg-9"><input type="passWord" class="form-control" id="oldPassword">
 
-            </div>
-
-            <!-- 模态框底部 -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-link" id="updateAdminMsg">修改</button>
-                <button type="button" class="btn btn-link" data-dismiss="modal">关闭</button>
-            </div>
-        </div>
-    </div>
+						<span id="errorPwdModal" style="font-size: 10px;color: aqua;"></span></div>
+				</div>
+				<div class="row" style="margin-top:10px">
+					<div class="col-lg-3 text-center" style="padding-top: 8px;">新密码:</div>
+					<div class="col-lg-9"><input type="passWord" class="form-control" id="updateAdminPassword1"
+							placeholder="请输入新密码...."></div>
+				</div>
+				<div class="row" style="margin-top:10px">
+					<div class="col-lg-3 text-center" style="padding-top: 8px;">确认密码:</div>
+					<div class="col-lg-9"><input type="passWord" class="form-control" id="updateAdminPassword2"
+							placeholder="请再次输入新密码...."></div>
+				</div>
+			</div>
+			<!-- 模态框底部 -->
+			<div class="modal-footer">
+				<button type="button" class="btn btn-link" id="updateAdminPasswordBtn">修改</button>
+				<button type="button" class="btn btn-link" data-dismiss="modal">关闭</button>
+			</div>
+		</div>
+	</div>
 </div>
 <!-- 模态框 end -->
 <script type="text/javascript">
-	
+
 	//获得浏览器中SessionScorage 中登录信息
 	var admin = JSON.parse(window.sessionStorage.getItem("loginAdmin"));
 	if (admin == null) {
@@ -109,9 +111,51 @@
 	var menu = window.sessionStorage.getItem("menu");
 	var subMenu = window.sessionStorage.getItem("sub-menu");
 	// 激活一级菜单
-	$("#"+menu).addClass("navigation__sub--active");
+	$("#" + menu).addClass("navigation__sub--active");
 	//激活二级菜单
-	if(subMenu!=null &&subMenu!=""){
-		$("#"+subMenu).addClass("navigation__active");
+	if (subMenu != null && subMenu != "") {
+		$("#" + subMenu).addClass("navigation__active");
 	}
+	$("#openAdminMsgModal").on("click", () => {
+		$("#updateAdminPasswordModal").modal("show");
+		// 首先清空模态框里面的内容
+		$("#oldPassword").val("");
+		$("#updateAdminPassword1").val("");
+		$("#updateAdminPassword2").val("");
+		$(".modal-backdrop").removeClass("modal-backdrop"); // 移除一层灰色暗底
+		return false;
+	});
+	// 设置原密码的失去焦点事件
+	$("#oldPassword").blur(function () {
+		const oldPassword = $(this).val();
+		if (!checkPassword(oldPassword, admin.adminPassword)) {
+			$("#errorPwdModal").text("原密码不正确！");
+			$("#oldPassword").select();
+		} else {
+			$("#errorPwdModal").text("");
+		}
+	})
+	// 验证两次值是否一致
+	function checkPassword(value1, value2) {
+		return value1 == value2;
+	}
+	$("#updateAdminPasswordBtn").click(() => {
+		// 判断原密码与登陆密码是否一致
+		// 判断新密码是否为空
+		// 判断确认密码是否为空
+		// 判断两次密码是否一致
+
+		// 修改信息
+		const data = {
+			adminId: admin.adminId,
+			adminPassword: $("#updateAdminPassword1").val()
+		};
+		$.post(adminUpdateMsgUrl, data, (result) => {
+			if (result.code == 0) {
+				window.sessionStorage.removeItem("loginAdmin");
+			} else {
+
+			}
+		})
+	})
 </script>
